@@ -10,7 +10,7 @@ function App() {
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
   const [addProgressState, setAddProgressState] = useState("1") // 1 = выбора части авто; 2 = Выбор конкретной детали авто; 3 = Меню добавление выбранной детали 
   const [selectedPart, setSelectedPart] = useState("Заднее правое крыло") // Выбранная для добавления деталь -> Для определения детали для поиска повреждений в базе данных у Атимо
-
+  const [carPart, setCarPart] = useState("None"); // Выбранная часть авто
   const addBucket = (name, type, price, degree, photo)=>{
     setBucketState((prevState)=>[...prevState, {name:name, type:type, price:price, degree: degree, photo:photo}]) // Добавление значения в массив выбранных повреждений
   }
@@ -28,7 +28,9 @@ function App() {
                   selectedPart={selectedPart}
                   setSelectedPart={setSelectedPart}
                   bucketState={bucketState}
-                  setBucketState={setBucketState}/>
+                  setBucketState={setBucketState}
+                  carPart={carPart}
+                  setCarPart={setCarPart}/>
 
       { addProgressState==="3" && selectedPart!=="None" ? <AllDamages selectedPart={selectedPart}/> : <div></div>}
     </div>

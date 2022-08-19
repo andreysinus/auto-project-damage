@@ -12,7 +12,9 @@ function BodyDamage(props) {
                                               setSelectedPart={props.setSelectedPart}
                                               selectedPart={props.selectedPart}
                                               addProgressState={props.addProgressState}
-                                              setAddProgressState={props.setAddProgressState}/>
+                                              setAddProgressState={props.setAddProgressState}
+                                              carPart={props.carPart}
+                                              setCarPart={props.setCarPart}/>
                                               
 
         :<Bucket bucketState={props.bucketState} updateBucket={props.setBucketState}/>}
