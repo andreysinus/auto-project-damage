@@ -1,0 +1,30 @@
+[
+{
+"Object": "Дверь передняя",
+"Object_id": "1",
+"Type": "Вмятина",
+"Grade": "2",
+"Price": 2000
+},
+{
+"Object": "Дверь передняя",
+"Object_id": "1",
+"Type": "Царапина",
+"Grade": "2",
+"Price": 2000
+},
+{
+"Object": "Капот",
+"Object_id": "2",
+"Type": "Вмятина",
+"Grade": "2",
+"Price": 4000
+},
+{
+"Object": "Капот",
+"Object_id": "2",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 3000
+}
+]

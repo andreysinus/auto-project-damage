@@ -6,6 +6,7 @@ import './bodyDamage.scss'
 function BodyDamage(props) {
   return (
     <div className='bodydamage'>
+      
         {props.selectMenuState==="1"? <AddDamages addBucket={props.addBucket}
                                               selectMenuState={props.selectMenuState}
                                               setSelectMenuState={props.setSelectMenuState}
@@ -14,7 +15,9 @@ function BodyDamage(props) {
                                               addProgressState={props.addProgressState}
                                               setAddProgressState={props.setAddProgressState}
                                               carPart={props.carPart}
-                                              setCarPart={props.setCarPart}/>
+                                              setCarPart={props.setCarPart}
+                                              choosenCarParts={props.choosenCarParts}
+                                              setChoosenCarParts={props.setChoosenCarParts}/>
                                               
 
         :<Bucket bucketState={props.bucketState} updateBucket={props.setBucketState}/>}

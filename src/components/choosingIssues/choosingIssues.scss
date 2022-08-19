@@ -21,7 +21,7 @@
 }
 .choosingissue__footer{
     display: flex;
-    top: calc(100% - 73px);
+    top: calc(100% - 81px);
     flex-direction: column;
     position: absolute;
     width: calc(100%);
@@ -43,5 +43,14 @@
 .choosingissue__body{
     overflow: auto;
     max-height: 350px;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
+}
+.choosingissue__body-title{
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 85.19%;
+    text-transform: uppercase;
+    color: #393939;
+    margin-left: 20px;
 }
