@@ -1,13 +1,11 @@
 import React from 'react'
-import carViews from '../../img/carAllViews.svg'
+import CarViews from '../carViews/carViews'
 import './addDamages.scss'
 
 function AddDamages() {
   return (
     <div className='adddamages'>
-      <div className='carviews'>
-        <img src={carViews} alt="Стороны авто" />
-      </div>
+      <CarViews/>
     </div>
   )
 }
