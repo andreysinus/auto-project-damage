@@ -6,7 +6,16 @@ import './bodyDamage.scss'
 function BodyDamage(props) {
   return (
     <div className='bodydamage'>
-        {props.selectState==="1"? <AddDamages/> : <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState}/>}
+        {props.selectMenuState==="1"? <AddDamages addBucket={props.addBucket}
+                                              selectMenuState={props.selectMenuState}
+                                              setSelectMenuState={props.setSelectMenuState}
+                                              setSelectedPart={props.setSelectedPart}
+                                              selectedPart={props.selectedPart}
+                                              addProgressState={props.addProgressState}
+                                              setAddProgressState={props.setAddProgressState}/>
+                                              
+
+        :<Bucket bucketState={props.bucketState} updateBucket={props.setBucketState}/>}
     </div>
   )
 }

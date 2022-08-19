@@ -19,13 +19,17 @@ function App() {
     <div className='container'>
       <div className="logo__anim"><Logo /></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
-      <BodyDamage selectState={selectMenuState}
-        addBucket={addBucket}
-        setAddProgressState={setAddProgressState}
-        setSelectedPart={setSelectedPart}
-        bucketState={bucketState}
-        setBucketState={setBucketState}
-      />
+
+      <BodyDamage selectMenuState={selectMenuState}
+                  setSelectMenuState={setSelectMenuState}
+                  addBucket={addBucket}
+                  addProgressState={addProgressState}
+                  setAddProgressState={setAddProgressState}
+                  selectedPart={selectedPart}
+                  setSelectedPart={setSelectedPart}
+                  bucketState={bucketState}
+                  setBucketState={setBucketState}/>
+
       { addProgressState==="3" && selectedPart!=="None" ? <AllDamages selectedPart={selectedPart}/> : <div></div>}
     </div>
   );

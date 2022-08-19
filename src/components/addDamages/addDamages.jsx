@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CarViews from '../carViews/carViews'
 import './addDamages.scss'
 
-function AddDamages() {
+function AddDamages(props) {
+  const [carPart, setCarPart] = useState("None");
   return (
     <div className='adddamages'>
-      <CarViews/>
+      { props.addProgressState==="1" ? <CarViews carPart={carPart} setCarPart={setCarPart}/> 
+      : props.addProgressState==="2" ? <div>два</div> 
+      : props.addProgressState==="3" ? <div>три</div> 
+      : <div>Ошибка</div>}
     </div>
   )
 }
