@@ -7,6 +7,8 @@ function CarViews(props) {
   return (
     <div>
         <BigButton carPart="front" setPart={props.setCarPart}/>
+        <BigButton carPart="roof" setPart={props.setCarPart}/>
+        <BigButton carPart="back" setPart={props.setCarPart}/>
         <div className='carviews'>
             <img src={carViews} alt="Стороны авто" />
         </div>
