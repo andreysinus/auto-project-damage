@@ -6,7 +6,7 @@ import './carViews.scss'
 function CarViews(props) {
   return (
     <div>
-        <BigButton />
+        <BigButton carPart="front" setPart={props.setCarPart}/>
         <div className='carviews'>
             <img src={carViews} alt="Стороны авто" />
         </div>
