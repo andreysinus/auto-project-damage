@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+.choosingissue__title{
+    margin:0;
+    text-transform: uppercase;
+    text-align: right;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 85.19%;
+    text-transform: uppercase;
+    color: #393939;
+}
+.choosingissue__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px
+}

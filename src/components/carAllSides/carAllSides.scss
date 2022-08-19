@@ -10,16 +10,21 @@
 }
 .carFront__image{
     transform: scale(2.5);
+    z-index: 110;
 }
 .carBack__image{
     transform: scale(2.5);
+    z-index: 110;
 }
 .carRoof__image{
     transform: scale(1.5);
+    z-index: 110;
 }
 .carLeft__image{
     transform: scale(1.5);
+    z-index: 110;
 }
 .carRight__image{
     transform: scale(1.5);
+    z-index: 110;
 }

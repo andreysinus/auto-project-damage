@@ -1,10 +1,15 @@
 import React from 'react'
 import './carAllSides.scss'
 import roofSVG from'../../img/carSides/roof.svg'
+import SmallButton from '../smallButton/smallButton'
 
-function CarRoof() {
+function CarRoof(props) {
   return (
     <div className='carSides'>
+        <div className='carSides__addbuttons'>
+            <SmallButton selectedPart="roof" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart}/>
+            <SmallButton selectedPart="hood" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart}/>
+        </div>
         <div className='carRoof__image'>
             <img src={roofSVG} alt="Крыша" />
         </div>
