@@ -7,7 +7,7 @@ function AddDamages(props) {
   return (
     <div className='adddamages'>
       { props.addProgressState==="1" ? <CarViews carPart={props.carPart} setCarPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/> 
-      : props.addProgressState==="2" ? <CarChoosenSide carPart={props.carPart}/> 
+      : props.addProgressState==="2" ? <CarChoosenSide carPart={props.carPart} setAddProgressState={props.setAddProgressState}/> 
       : props.addProgressState==="3" ? <div>три</div> 
       : <div>Ошибка</div>}
     </div>
