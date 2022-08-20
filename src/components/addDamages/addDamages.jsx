@@ -4,7 +4,10 @@ import CarViews from '../carViews/carViews'
 import ChoosingIssues from '../choosingIssues/choosingIssues';
 import './addDamages.scss'
 
+
+
 function AddDamages(props) {
+
   return (
     <div className='adddamages'>
       { props.addProgressState==="1" ? <CarViews carPart={props.carPart} setCarPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/> 
@@ -17,9 +20,10 @@ function AddDamages(props) {
                                                        setAddProgressState={props.setAddProgressState}
                                                        carPart={props.carPart}
                                                        setCarPart={props.setCarPart}
+                                                       setChoosenCarParts={props.setChoosenCarParts}
                                                        /> 
 
-      : props.addProgressState==="3" ? <ChoosingIssues selectedPart={props.selectedPart} setAddProgressState={props.setAddProgressState}
+      : props.addProgressState==="3" ?  <ChoosingIssues selectedPart={props.selectedPart} setAddProgressState={props.setAddProgressState}
                                         choosenCarParts={props.choosenCarParts}
                                         setChoosenCarParts={props.setChoosenCarParts}/>
       : <div>Ошибка</div>}

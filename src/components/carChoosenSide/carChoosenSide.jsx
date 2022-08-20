@@ -19,7 +19,8 @@ function CarChoosenSide(props) {
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
                                             carPart={props.carPart}
-                                            setCarPart={props.setCarPart}/>:
+                                            setCarPart={props.setCarPart}
+                                            setChoosenCarParts={props.setChoosenCarParts}/>:
 
          props.carPart==="back"? <CarBack addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
@@ -27,7 +28,8 @@ function CarChoosenSide(props) {
                                           setSelectedPart={props.setSelectedPart}
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
-                                          setAddProgressState={props.setAddProgressState}/>:
+                                          setAddProgressState={props.setAddProgressState}
+                                          setChoosenCarParts={props.setChoosenCarParts}/>:
 
          props.carPart==="roof"? <CarRoof addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
@@ -35,7 +37,8 @@ function CarChoosenSide(props) {
                                           setSelectedPart={props.setSelectedPart}
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
-                                          setAddProgressState={props.setAddProgressState}/>:
+                                          setAddProgressState={props.setAddProgressState}
+                                          setChoosenCarParts={props.setChoosenCarParts}/>:
 
          props.carPart==="left"? <CarLeft addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
@@ -43,7 +46,8 @@ function CarChoosenSide(props) {
                                           setSelectedPart={props.setSelectedPart}
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
-                                          setAddProgressState={props.setAddProgressState}/>:
+                                          setAddProgressState={props.setAddProgressState}
+                                          setChoosenCarParts={props.setChoosenCarParts}/>:
                                           
          props.carPart==="right"? <CarRight addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
@@ -51,7 +55,8 @@ function CarChoosenSide(props) {
                                             setSelectedPart={props.setSelectedPart}
                                             selectedPart={props.selectedPart}
                                             addProgressState={props.addProgressState}
-                                            setAddProgressState={props.setAddProgressState}/>: <div></div>}
+                                            setAddProgressState={props.setAddProgressState}
+                                            setChoosenCarParts={props.setChoosenCarParts}/>: <div></div>}
     </div>
   )
 }

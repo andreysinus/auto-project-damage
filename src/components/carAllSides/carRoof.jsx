@@ -7,8 +7,8 @@ function CarRoof(props) {
   return (
     <div className='carSides'>
         <div className='carSides__addbuttons'>
-            <SmallButton selectedPart="roof" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart}/>
-            <SmallButton selectedPart="hood" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart}/>
+            <SmallButton selectedPart="roof" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+            <SmallButton selectedPart="hood" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
         </div>
         <div className='carRoof__image'>
             <img src={roofSVG} alt="Крыша" />

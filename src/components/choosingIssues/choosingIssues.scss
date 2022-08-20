@@ -49,8 +49,42 @@
     margin: 0;
     font-weight: 500;
     font-size: 14px;
-    line-height: 85.19%;
+    line-height: 90%;
     text-transform: uppercase;
     color: #393939;
     margin-left: 20px;
+}
+.choosingissue__add{
+    border: 0;padding: 10px;
+    padding-bottom: 7px;
+    border-radius: 9px;
+    background: linear-gradient(63.8deg, #324167 -53.91%, #A468B8 104.71%), #D9D9D9;
+}
+.choosingissue__item{ 
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    -webkit-filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
+    filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
+}
+.choosingissue__item-title{
+    width: 165px;
+    border-radius: 9px;
+    text-align: center;
+    margin:0;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-color: white;
+}
+.choosingissue__photo{
+    display: flex;
+    width: 41px;
+    height: 41px;
+    padding: 8px;
+    background: #989898;
+    border-radius: 9px;
 }

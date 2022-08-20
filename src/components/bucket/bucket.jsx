@@ -7,7 +7,7 @@ const Bucket = ({bucketState}) => {
     //const forceUpdate = React.useCallback(() => updateState({}), []);
     //var arrBucket = bucketState;
   return (
-    <div>
+    <div className='bucketbody'>
          {bucketState.length>0 ? bucketState.map(function(d, index){
             return <div className='bucket__item' key={index}>
                  

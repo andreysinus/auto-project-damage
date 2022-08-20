@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './choosingIssues.scss'
 import backLogo from '../../img/back.svg'
-import damages from '../../jsons/response.json'
-import {Unific} from './unification.js'
+import plus from '../../img/plus.svg'
+import camera from '../../img/camera.svg'
+import {Upload} from 'antd'
+
+
+const getBase64 = (img, callback) => {
+  const reader = new FileReader();
+  reader.addEventListener('load', () => callback(reader.result));
+  reader.readAsDataURL(img);
+};
 
 function ChoosingIssues (props){
-  let options = []
-      damages.map((text) => {
-        if (text.Object===Unific(props.selectedPart.name)){
-          options.push({name: text.Object, type: text.Type, price: text.Price, degree: "1", photo: undefined})
-          return 0
-        }
-        else{
-          return 0
-        }
-      }
-      )
-  //function addNewIssue(issue){}
+  let options = props.choosenCarParts;
+  const [, updateState] = useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+  
+  function updateParts(){
+    props.setChoosenCarParts(options)
+  }
+  const handleChange = (info) => {
+    console.log(info.file.status)
+    if (info.file.status === 'done') {
+      getBase64(info.file.originFileObj, (url) => {
+        
+      });
+    }
+  }
   return (
     <div>
       <div className="choosingissue__header">
@@ -26,8 +37,21 @@ function ChoosingIssues (props){
       </div>
       <div className='choosingissue__body'>
         <p className='choosingissue__body-title'>Выберите тип, фотографию<br/>и степень повреждения:</p>
-        {options.map((text, index)=>{
-          return <div key={index}>{text.name} {text.type}</div>
+        {props.choosenCarParts.map((text, index)=>{
+          return <div key={index}>
+              <div className="choosingissue__item">
+                <button className='choosingissue__add'><img src={plus} alt="Добавить повреждение" /></button>
+                <p className='choosingissue__item-title'>{text.type}</p>
+                <Upload
+                  showUploadList={false}
+                  listType="picture-card"
+                  onChange={handleChange}>
+                  
+                          <div className='choosingissue__photo'><img src={camera} alt="Добавить фото" /></div>
+                </Upload>
+                </div>
+              <div className="choosingissue__item">{text.degree}</div>
+            </div>
         })}
       </div>
       <div className='choosingissue__footer'>

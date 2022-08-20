@@ -7,7 +7,7 @@ function BodyDamage(props) {
   return (
     <div className='bodydamage'>
       
-        {props.selectMenuState==="1"? <AddDamages addBucket={props.addBucket}
+        <AddDamages addBucket={props.addBucket}
                                               selectMenuState={props.selectMenuState}
                                               setSelectMenuState={props.setSelectMenuState}
                                               setSelectedPart={props.setSelectedPart}
@@ -20,7 +20,7 @@ function BodyDamage(props) {
                                               setChoosenCarParts={props.setChoosenCarParts}/>
                                               
 
-        :<Bucket bucketState={props.bucketState} updateBucket={props.setBucketState}/>}
+       {props.selectMenuState==="2"? <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState}/> :<div></div>}
     </div>
   )
 }
