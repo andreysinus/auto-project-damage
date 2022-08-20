@@ -1,32 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './choosingIssues.scss'
 import backLogo from '../../img/back.svg'
 import plus from '../../img/plus.svg'
 import camera from '../../img/camera.svg'
 import {Upload} from 'antd'
 
-
-const getBase64 = (img, callback) => {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-};
+function getBase64(file, cb) {
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = function () {
+      cb(reader.result)
+  };
+  reader.onerror = function (error) {
+      console.log('Error: ', error);
+  };
+}
 
 function ChoosingIssues (props){
-  //let options = props.choosenCarParts;
-  //const [, updateState] = useState();
-  //const forceUpdate = React.useCallback(() => updateState({}), []);
+  let options = props.choosenCarParts;
+  const [, updateState] = useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
   
- // function updateParts(){
-  //  props.setChoosenCarParts(options)
- // }
-  const handleChange = (info) => {
-    console.log(info.file.status)
-    if (info.file.status === 'done') {
-      getBase64(info.file.originFileObj, (url) => {
-        
-      });
-    }
+  function updateParts(){
+    props.setChoosenCarParts(options)
   }
   return (
     <div>
@@ -45,9 +41,16 @@ function ChoosingIssues (props){
                 <Upload
                   showUploadList={false}
                   listType="picture-card"
-                  onChange={handleChange}>
+                  accept=".png,.jpeg,.doc"
+                  beforeUpload={(file)=>{
+                    getBase64(file, (result)=>{
+                      options[index].photo=result;
+                      updateParts();
+                      forceUpdate();
+                    })
+                  }}>
                   
-                          <div className='choosingissue__photo'><img src={camera} alt="Добавить фото" /></div>
+                          <div className={props.choosenCarParts[index].photo!==undefined ?'choosingissue__photo active':'choosingissue__photo'}><img src={camera} alt="Добавить фото" /></div>
                 </Upload>
                 </div>
               <div className="choosingissue__item">{text.degree}</div>
