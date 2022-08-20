@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './choosingIssues.scss'
 import backLogo from '../../img/back.svg'
 import plus from '../../img/plus.svg'
@@ -13,13 +13,13 @@ const getBase64 = (img, callback) => {
 };
 
 function ChoosingIssues (props){
-  let options = props.choosenCarParts;
-  const [, updateState] = useState();
-  const forceUpdate = React.useCallback(() => updateState({}), []);
+  //let options = props.choosenCarParts;
+  //const [, updateState] = useState();
+  //const forceUpdate = React.useCallback(() => updateState({}), []);
   
-  function updateParts(){
-    props.setChoosenCarParts(options)
-  }
+ // function updateParts(){
+  //  props.setChoosenCarParts(options)
+ // }
   const handleChange = (info) => {
     console.log(info.file.status)
     if (info.file.status === 'done') {
