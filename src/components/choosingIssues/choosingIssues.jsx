@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './choosingIssues.scss'
 import backLogo from '../../img/back.svg'
 import {Upload} from 'antd'
+import SelectDegree from '../selectDegree/selectDegree';
 
 function getBase64(file, cb) {
   let reader = new FileReader();
@@ -58,12 +59,20 @@ function ChoosingIssues (props){
                   </div>
                 </Upload>
                 </div>
-              <div className="choosingissue__item">{text.degree}</div>
+              <div className="choosingissue__item"><SelectDegree options={options[index]} title="Легкое" degree="1" updateParts={updateParts}/>
+                                                   <SelectDegree options={options[index]} title="Среднее" degree="2" updateParts={updateParts}/>
+                                                   <SelectDegree options={options[index]} title="Тяжелое" degree="3" updateParts={updateParts}/></div>
+              
             </div>
         })}
       </div>
       <div className='choosingissue__footer'>
-        <button className='choosingissue__addbutton'>Добавить повреждения</button>
+        <button className='choosingissue__addbutton' onClick={()=>{props.choosenCarParts.map((text)=>{
+          if (text.photo!==undefined){
+            props.addBucket(text.name, text.type, text.price, text.degree, text.photo, text.object_id)
+          }
+          return 0
+        }); props.setAddProgressState("1")}}>Добавить повреждения</button>
       </div>
     </div>
   )

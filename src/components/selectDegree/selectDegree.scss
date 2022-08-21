@@ -1,0 +1,17 @@
+.selectdegree__button{
+    border:0;
+    background: #989898;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 10px 8px 10px;
+    transition: .5s ease;
+}
+.selectdegree__button.active{
+    background: white;
+    color: #393939;
+
+    font-size: 14px;
+}
