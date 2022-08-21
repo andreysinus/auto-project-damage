@@ -1,6 +1,6 @@
 import React from 'react'
 import './carAllSides.scss'
-import rearSVG from'../../img/carSides/back.svg'
+
 
 function CarBack() {
   return (
