@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './bucket.scss'
-import {Modal} from 'antd';
+import ImagePreview from '../imagePreview/imagePreview';
 //import deleteIMG from '../../img/delete.svg'
 
 const Bucket = ({bucketState}) => {
@@ -13,11 +13,13 @@ const Bucket = ({bucketState}) => {
     }
   }
   const [visible, setVisible] = useState(false);
-  const handleCancel = () => setVisible(false);
-    //const [, updateState] = useState();
-    //const forceUpdate = React.useCallback(() => updateState({}), []);
+  const [imageURL, setImageURL] = useState("");
+    const [, updateState] = useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
     //var arrBucket = bucketState;
   return (
+    <div>
+    {visible? <ImagePreview visible={visible} setVisible={setVisible} imageURL={imageURL} forceUpdate={forceUpdate}/>:<div></div>}
     <div className='bucketbody'>
          {bucketState.length>0 ? bucketState.map(function(d, index){
             return <div className='bucket__item' key={index}>
@@ -37,7 +39,7 @@ const Bucket = ({bucketState}) => {
                       <div className="bucket__valuetitle">Степень:</div>
                       <div className="bucket__valuedesc">{setDegree(d.degree)}</div>
                     </div>
-                    <button className="bucket__preview" onClick={() => setVisible(true)}>
+                    <button className="bucket__preview" onClick={() =>{ console.log(imageURL); setImageURL(d.photo); setVisible(true);}}>
                       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M19.8914 0.210876H2.10863C0.94593 0.210876 0 1.15681 0 2.3195V19.6805C0 20.8432 0.94593 21.7892 2.10863 21.7892H19.8914C21.0541 21.7892 22 20.8432 22 19.6805V2.3195C22 1.15681 21.0541 0.210876 19.8914 0.210876ZM19.8914 2.3195L19.8921 11.5432L16.3297 8.19765C16.0806 7.9638 15.7616 7.83504 15.4314 7.83504C15.0297 7.83504 14.6538 8.02348 14.4001 8.35193L10.2065 13.7821C10.0706 13.9581 9.85256 14.0631 9.62321 14.0631C9.46696 14.0631 9.31928 14.0156 9.19614 13.9257L6.47088 11.9354C6.19943 11.7371 5.84778 11.628 5.48088 11.628C5.06302 11.628 4.67229 11.7642 4.38088 12.0115L2.10863 13.9387V2.3195H19.8914Z" fill="#393939"/>
                       <path d="M8.08297 8.57508C9.28439 8.57508 10.2619 7.59759 10.2619 6.39617C10.2619 5.19474 9.28439 4.21725 8.08297 4.21725C6.88154 4.21725 5.90405 5.19474 5.90405 6.39617C5.90405 7.59759 6.88154 8.57508 8.08297 8.57508Z" fill="#393939"/>
@@ -46,15 +48,11 @@ const Bucket = ({bucketState}) => {
                   </div>
                   <p className="bucket__price">={d.price} ₽</p>
                 </div>
-                                  
-                <Modal style={{
-                    position: "absolute",
-                  }}
-                  visible={visible} footer={null} onCancel={handleCancel}>
-                    <img alt="Повреждение" style={{ width: '100%' }} src={d.photo} />
-                  </Modal>
+                
             </div>;
               }): <p className='bucket__none'>Повреждения<br/>не выбраны</p>}
+              
+    </div>
     </div>
   )
 }
