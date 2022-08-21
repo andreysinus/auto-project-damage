@@ -13,7 +13,7 @@ function SmallButton(props) {
       let options = []
       damages.map((text) => {
         if (text.Object===Unific(TitleCheck(props.selectedPart))){
-          options.push({name: text.Object, type: text.Type, price: text.Price, degree: "1", photo: undefined})
+          options.push({name: text.Object, object_id:text.Object_id, type: text.Type, price: text.Price, degree: "1", photo: undefined})
           return 0
         }
         else{
