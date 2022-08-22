@@ -26,5 +26,117 @@
 "Type": "Царапина",
 "Grade": "1",
 "Price": 3000
+},
+{
+    "Object": "Передний бампер",
+    "Object_id": "3",
+    "Type": "Царапина",
+    "Grade": "1",
+    "Price": 3000
+},
+{
+    "Object": "Передний бампер",
+    "Object_id": "3",
+    "Type": "Трещина",
+    "Grade": "2",
+    "Price": 5000
+},
+{
+    "Object": "Задний бампер",
+    "Object_id": "4",
+    "Type": "Царапина",
+    "Grade": "1",
+    "Price": 3000
+},
+{
+    "Object": "Задний бампер",
+    "Object_id": "4",
+    "Type": "Трещина",
+    "Grade": "2",
+    "Price": 5000
+},
+{
+    "Object": "Левая фара",
+    "Object_id": "5",
+    "Type": "Трещина",
+    "Grade": "2",
+    "Price": 6000
+},
+{
+    "Object": "Левая фара",
+    "Object_id": "5",
+    "Type": "Скол",
+    "Grade": "2",
+    "Price": 4000
+},
+{
+    "Object": "Правая фара",
+    "Object_id": "6",
+    "Type": "Трещина",
+    "Grade": "2",
+    "Price": 6000
+},
+{
+    "Object": "Правая фара",
+    "Object_id": "6",
+    "Type": "Скол",
+    "Grade": "2",
+    "Price": 4000
+},
+{
+    "Object": "Дверь задняя",
+    "Object_id": "7",
+    "Type": "Вмятина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Дверь задняя",
+    "Object_id": "7",
+    "Type": "Царапина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Переднее крыло",
+    "Object_id": "8",
+    "Type": "Вмятина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Переднее крыло",
+    "Object_id": "8",
+    "Type": "Царапина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Заднее крыло",
+    "Object_id": "9",
+    "Type": "Вмятина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Заднее крыло",
+    "Object_id": "9",
+    "Type": "Царапина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Багажник",
+    "Object_id": "10",
+    "Type": "Вмятина",
+    "Grade": "2",
+    "Price": 2000
+},
+{
+    "Object": "Багажник",
+    "Object_id": "10",
+    "Type": "Царапина",
+    "Grade": "2",
+    "Price": 2000
 }
 ]
