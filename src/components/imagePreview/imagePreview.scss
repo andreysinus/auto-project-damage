@@ -21,9 +21,13 @@
 }
 .imagepreview__content{
     width: 300px;
-    height: 450px;
-    margin: 10px;
-    
+    background-color: #f3f3f3;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    -webkit-filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
+    filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
 }
 .imagepreview__close{
     z-index: 401;
@@ -32,7 +36,6 @@
     -webkit-filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
     filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
     margin-left:230px
-
 }
 img{
     border-radius: 15px;
