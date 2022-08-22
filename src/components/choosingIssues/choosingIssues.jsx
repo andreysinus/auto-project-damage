@@ -66,7 +66,7 @@ function ChoosingIssues (props){
             </div>
         })}
       </div>
-      <div className='choosingissue__footer'>
+      <div className={props.choosenCarParts.length>2?'choosingissue__footer active':'choosingissue__footer'}>
         <button className='choosingissue__addbutton' onClick={()=>{props.choosenCarParts.map((text)=>{
           if (text.photo!==undefined){
             props.addBucket(text.name, text.type, text.price, text.degree, text.photo, text.object_id)
