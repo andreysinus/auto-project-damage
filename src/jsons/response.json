@@ -1,142 +1,226 @@
 [
 {
-"Object": "Дверь передняя",
-"Object_id": "1",
+"Object": "Багажник",
+"Object_id": "9",
 "Type": "Вмятина",
-"Grade": "2",
-"Price": 2000
+"Grade": "1",
+"Price": 1000
 },
 {
-"Object": "Дверь передняя",
-"Object_id": "1",
-"Type": "Царапина",
-"Grade": "2",
-"Price": 2000
-},
-{
-"Object": "Капот",
-"Object_id": "2",
-"Type": "Вмятина",
-"Grade": "2",
-"Price": 4000
-},
-{
-"Object": "Капот",
-"Object_id": "2",
+"Object": "Бампер задний",
+"Object_id": "7",
 "Type": "Царапина",
 "Grade": "1",
+"Price": 1500
+},
+{
+"Object": "Бампер передний",
+"Object_id": "6",
+"Type": "Вмятина",
+"Grade": "3",
 "Price": 3000
 },
 {
-    "Object": "Передний бампер",
-    "Object_id": "3",
-    "Type": "Царапина",
-    "Grade": "1",
-    "Price": 3000
+"Object": "Бампер передний",
+"Object_id": "6",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Передний бампер",
-    "Object_id": "3",
-    "Type": "Трещина",
-    "Grade": "2",
-    "Price": 5000
+"Object": "Дверь задняя",
+"Object_id": "2",
+"Type": "Царапина",
+"Grade": "2",
+"Price": 1000
 },
 {
-    "Object": "Задний бампер",
-    "Object_id": "4",
-    "Type": "Царапина",
-    "Grade": "1",
-    "Price": 3000
+"Object": "Дверь задняя",
+"Object_id": "2",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 900
 },
 {
-    "Object": "Задний бампер",
-    "Object_id": "4",
-    "Type": "Трещина",
-    "Grade": "2",
-    "Price": 5000
+"Object": "Дверь задняя",
+"Object_id": "2",
+"Type": "Царапина",
+"Grade": "3",
+"Price": 1500
 },
 {
-    "Object": "Левая фара",
-    "Object_id": "5",
-    "Type": "Трещина",
-    "Grade": "2",
-    "Price": 6000
+"Object": "Дверь передняя",
+"Object_id": "1",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Левая фара",
-    "Object_id": "5",
-    "Type": "Скол",
-    "Grade": "2",
-    "Price": 4000
+"Object": "Документы",
+"Object_id": "27",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Правая фара",
-    "Object_id": "6",
-    "Type": "Трещина",
-    "Grade": "2",
-    "Price": 6000
+"Object": "Заднее стекло",
+"Object_id": "11",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Правая фара",
-    "Object_id": "6",
-    "Type": "Скол",
-    "Grade": "2",
-    "Price": 4000
+"Object": "Задний диван",
+"Object_id": "25",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Дверь задняя",
-    "Object_id": "7",
-    "Type": "Вмятина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Задняя противотуманная фара",
+"Object_id": "20",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Дверь задняя",
-    "Object_id": "7",
-    "Type": "Царапина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Задняя фара",
+"Object_id": "18",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Переднее крыло",
-    "Object_id": "8",
-    "Type": "Вмятина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Зеркало бокового вида",
+"Object_id": "16",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Переднее крыло",
-    "Object_id": "8",
-    "Type": "Царапина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Капот",
+"Object_id": "8",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Заднее крыло",
-    "Object_id": "9",
-    "Type": "Вмятина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Колесный диск",
+"Object_id": "22",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Заднее крыло",
-    "Object_id": "9",
-    "Type": "Царапина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Комплектность",
+"Object_id": "28",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Багажник",
-    "Object_id": "10",
-    "Type": "Вмятина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Крыло заднее",
+"Object_id": "5",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 },
 {
-    "Object": "Багажник",
-    "Object_id": "10",
-    "Type": "Царапина",
-    "Grade": "2",
-    "Price": 2000
+"Object": "Крыло переднее",
+"Object_id": "4",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Крыша",
+"Object_id": "21",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Лобовое стекло",
+"Object_id": "10",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Переднее сиденье",
+"Object_id": "24",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Передняя противотуманная фара",
+"Object_id": "19",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Передняя фара",
+"Object_id": "17",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Порог",
+"Object_id": "3",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Резина",
+"Object_id": "23",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Салон",
+"Object_id": "29",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Стекло задней двери",
+"Object_id": "13",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Стекло задней форточки",
+"Object_id": "15",
+"Type": "Вмятина",
+"Grade": "1",
+"Price": 1000
+},
+{
+"Object": "Стекло передней двери",
+"Object_id": "12",
+"Type": "Вмятина",
+"Grade": "3",
+"Price": 1000
+},
+{
+"Object": "Стекло передней форточки",
+"Object_id": "14",
+"Type": "Царапина",
+"Grade": "2",
+"Price": 1000
+},
+{
+"Object": "Стойка",
+"Object_id": "26",
+"Type": "Царапина",
+"Grade": "1",
+"Price": 1000
 }
 ]

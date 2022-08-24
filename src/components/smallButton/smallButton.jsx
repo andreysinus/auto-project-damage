@@ -4,22 +4,51 @@ import { TitleCheck } from '../checkTitle'
 import damages from '../../jsons/response.json'
 import { Unific } from './unification'
 
+
+
+
 function SmallButton(props) {
+  
     let classNames="smallbutton "
     classNames+="smallbutton__" + props.selectedPart
 
+    function findType(options, dam){
+      var mapIndex=false
+      
+      options.map((text, index)=>{
+        if (text.object_id===dam.Object_id && text.type===dam.Type){
+          mapIndex=index
+        }
+        return 0
+      })
+      return mapIndex
+    }
     function updateOptions(){
       let options = []
-      damages.map((text) => {
+      damages.map((text)=>{
         if (text.Object===Unific(TitleCheck(props.selectedPart))){
-          options.push({name: text.Object, object_id:text.Object_id, type: text.Type, price: text.Price, degree: "1", photo: undefined})
-          return 0
+          let x = findType(options, text)
+          if (x!==false){
+            switch (text.Grade){
+              case "1": options[x].price[0]=text.Price; break
+              case "2": options[x].price[1]=text.Price; break
+              case "3": options[x].price[2]=text.Price; break
+              default: break
+            }
+          }
+          else{
+            options.push({name: text.Object, object_id:text.Object_id, type: text.Type, price: [0,0,0], degree: "1", photo: undefined, user: false})
+            x=options.length-1;
+            switch (text.Grade){
+              case "1": options[x].price[0]=text.Price; break
+              case "2": options[x].price[1]=text.Price; break
+              case "3": options[x].price[2]=text.Price; break
+              default: break
+            }
+          }
         }
-        else{
-          return 0
-        }
-      }
-      )
+        return 0
+      })
       return options
     }
   return (

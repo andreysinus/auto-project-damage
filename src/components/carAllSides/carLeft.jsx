@@ -12,6 +12,11 @@ function CarLeft(props) {
           <SmallButton selectedPart="lrFender" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
           <SmallButton selectedPart="lfWheel" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
           <SmallButton selectedPart="lrWheel" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+          <SmallButton selectedPart="lThreshold" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+          <SmallButton selectedPart="lfGlass" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+          <SmallButton selectedPart="lrGlass" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+          <SmallButton selectedPart="lrPane" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+          <SmallButton selectedPart="lfPane" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
         </div>
         <div className='carLeft__image'>
         <svg width="70" height="223" viewBox="0 0 70 223" fill="none" xmlns="http://www.w3.org/2000/svg">

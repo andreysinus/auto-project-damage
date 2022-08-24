@@ -20,10 +20,10 @@
 //
 //
 .smallbutton__rfFender{
-    transform: translate(15px, -127px);
+    transform: translate(15px, -127px) scale(0.85);
 }
 .smallbutton__rrFender{
-    transform: translate(5px, 100px);
+    transform: translate(10px, 100px);
 }
 .smallbutton__rrDoor{
     transform: translate(25px, 25px);
@@ -37,25 +37,55 @@
 .smallbutton__rrWheel{
     transform: translate(47px, 83px);
 }
+.smallbutton__rThreshold{
+    transform: translate(55px, -8px) scale(0.8);
+}
+.smallbutton__rfPane{
+    transform: translate(0px, -70px) scale(0.8)
+}
+.smallbutton__rrPane{
+    transform: translate(-12px, 78px) scale(0.8)
+}
+.smallbutton__rrGlass{
+    transform: translate(-12px, 33px) scale(0.8)
+}
+.smallbutton__rfGlass{
+    transform: translate(-10px, -20px) scale(0.8)
+}
 //
 //
 .smallbutton__lfFender{
-    transform: translate(30px, -127px);
+    transform: translate(30px, -127px) scale(0.85);
 }
 .smallbutton__lrFender{
-    transform: translate(40px, 100px);
+    transform: translate(30px, 100px);
 }
 .smallbutton__lrDoor{
-    transform: translate(20px, 25px);
+    transform: translate(10px, 25px);
 }
 .smallbutton__lfDoor{
-    transform: translate(20px, -45px);
+    transform: translate(10px, -45px);
 }
 .smallbutton__lfWheel{
     transform: translate(-5px, -127px);
 }
 .smallbutton__lrWheel{
     transform: translate(-4px, 83px);
+}
+.smallbutton__lThreshold{
+    transform: translate(-10px, -8px) scale(0.8);
+}
+.smallbutton__lfPane{
+    transform: translate(40px, -70px) scale(0.8)
+}
+.smallbutton__lrPane{
+    transform: translate(55px, 78px) scale(0.8)
+}
+.smallbutton__lrGlass{
+    transform: translate(55px, 33px) scale(0.8)
+}
+.smallbutton__lfGlass{
+    transform: translate(52px, -20px) scale(0.8)
 }
 //
 //
@@ -66,10 +96,16 @@
     transform: translate(36px, 10px);
 }
 .smallbutton__lRearlight{
-    transform: translate(-35px, -38px);
+    transform: translate(-35px, -38px) scale(0.9);
 }
 .smallbutton__rRearlight{
-    transform: translate(106px, -38px);
+    transform: translate(106px, -38px) scale(0.9);
+}
+.smallbutton__rearGlass{
+    transform: translate(36px, -85px) scale(0.9);
+}
+.smallbutton__bFoglight{
+    transform: translate(-15px, 18px) scale(0.9);
 }
 // 
 // 
@@ -90,4 +126,10 @@
 }
 .smallbutton__rMirror{
     transform: translate(-70px, -47px);
+}
+.smallbutton__lFoglight{
+    transform: translate(115px, 15px) scale(0.8);
+}
+.smallbutton__rFoglight{
+    transform: translate(-45px, 15px) scale(0.8);
 }

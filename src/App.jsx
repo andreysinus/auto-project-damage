@@ -6,6 +6,7 @@ import Logo from './components/logo/logo';
 import SelectMenu from './components/selectMenu/selectMenu';
 
 function App() {
+  const [isFirst, setIsFirst] = useState(true)
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
   const [addProgressState, setAddProgressState] = useState("1") // 1 = выбора части авто; 2 = Выбор конкретной детали авто; 3 = Меню добавление выбранной детали 
@@ -19,6 +20,28 @@ function App() {
   const updateChoosen = (array) =>{
     setChoosenCarParts(array)
   }
+
+  if (isFirst)
+  {
+    setIsFirst(false);
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ==");
+    
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+    
+    fetch("http://тест.атимо.рф/Taksopark/hs/WebApp/GetDamage", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
+    
+  }
+
+
   return (
     <div className='container'>
       <div className="logo__anim"><Logo /></div>
