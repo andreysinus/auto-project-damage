@@ -26,7 +26,8 @@ function AddDamages(props) {
       : props.addProgressState==="3" ?  <ChoosingIssues selectedPart={props.selectedPart} setAddProgressState={props.setAddProgressState}
                                         choosenCarParts={props.choosenCarParts}
                                         setChoosenCarParts={props.setChoosenCarParts} 
-                                        addBucket={props.addBucket}/>
+                                        addBucket={props.addBucket}
+                                        queryParams={props.queryParams}/>
       : <div>Ошибка</div>}
     </div>
   )

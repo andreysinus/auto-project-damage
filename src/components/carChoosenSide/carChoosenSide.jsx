@@ -6,6 +6,7 @@ import CarBack from '../carAllSides/carBack'
 import CarRoof from '../carAllSides/carRoof'
 import CarLeft from '../carAllSides/carLeft'
 import CarRight from '../carAllSides/carRight'
+import CarRightNew from '../carAllSides/carRightNew'
 
 function CarChoosenSide(props) {
   return (
@@ -49,7 +50,7 @@ function CarChoosenSide(props) {
                                           setAddProgressState={props.setAddProgressState}
                                           setChoosenCarParts={props.setChoosenCarParts}/>:
                                           
-         props.carPart==="right"? <CarRight addBucket={props.addBucket}
+         props.carPart==="right"? <CarRightNew addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}

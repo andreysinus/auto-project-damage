@@ -3,7 +3,6 @@ import './choosingIssues.scss'
 import backLogo from '../../img/back.svg'
 import {Upload} from 'antd'
 import SelectDegree from '../selectDegree/selectDegree';
-import Resizer from 'react-image-file-resizer';
 
 function getBase64(file, cb) {
   let reader = new FileReader();
@@ -23,21 +22,6 @@ function returnPrice(text){
     default: return 0
   }
 }
-const resizeFile = (file) =>
-  new Promise((resolve) => {
-    Resizer.imageFileResizer(
-      file,
-      1000,
-      1000,
-      "JPEG",
-      100,
-      0,
-      (uri) => {
-        resolve(uri);
-      },
-      "base64"
-    );
-  });
 
 function ChoosingIssues (props){
   let options = props.choosenCarParts;
@@ -76,7 +60,7 @@ function ChoosingIssues (props){
                   accept=".png,.jpeg,.doc"
                   beforeUpload={(file)=>{
                     getBase64(file, (result)=>{
-                      options[index].photo=resizeFile(result);
+                      options[index].photo=result;
                       updateParts();
                     })
                   }}>

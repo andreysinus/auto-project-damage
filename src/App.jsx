@@ -4,8 +4,10 @@ import AllDamages from './components/allDamages/allDamages';
 import BodyDamage from './components/bodyDamage/bodyDamage';
 import Logo from './components/logo/logo';
 import SelectMenu from './components/selectMenu/selectMenu';
+import queryString from "query-string"
 
 function App() {
+  const queryParams = queryString.parse(window.location.search)
   const [isFirst, setIsFirst] = useState(true)
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
@@ -59,9 +61,10 @@ function App() {
                   carPart={carPart}
                   setCarPart={setCarPart}
                   choosenCarParts={choosenCarParts}
-                  setChoosenCarParts={updateChoosen}/>
+                  setChoosenCarParts={updateChoosen}
+                  queryParams={queryParams}/>
 
-      { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart}/> : <div></div>}
+      { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart} choosenCarParts={choosenCarParts[0]} queryParams={queryParams}/> : <div></div>}
     </div>
   );
 }
