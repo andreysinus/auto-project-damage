@@ -28,6 +28,88 @@
     transform: scale(1.5);
     z-index: 110;
 }
+.carRightView{
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+
+}
+.carFrontFender{
+    top: 60px;
+}
 .carViewButton{
-    
+    position: absolute;
+    border: 0;
+    background-color: transparent;
+}
+.carFrontTire{
+    z-index: 349;
+    top: 60px;
+    margin-top: 24px;
+    margin-left: 45px;
+}
+.carFrontDisk{
+    z-index: 350;
+    top: 60px;
+    margin-top: 39px;
+    margin-left: 45px;
+}
+.carFrontDoor{
+    top: 60px;
+    margin-top: 105px;
+    margin-right: 2px;
+}
+.carRearDoor{
+    top: 60px;
+    margin-top: 172px;
+    margin-right: 1px;
+}
+.carRearFender{
+    top: 60px;
+    margin-top: 222px;
+    margin-right: px;
+}
+.carRearTire{
+    top: 60px;
+    z-index: 349;
+    margin-top: 245px;
+    margin-left: 35px;
+}
+.carRearDisk{
+    z-index: 350;
+    top: 60px;
+    margin-top: 260px;
+    margin-left: 35px;
+}
+.carThreshold{
+    z-index: 350;
+    top: 60px;
+    margin-top: 77px;
+    margin-left: 65px;
+    transform: scale(1.03);
+}
+.carFrontGlass{
+    top: 60px;
+    margin-top: 125px;
+    margin-right: 82px;
+    transform: scale(1.2);
+}
+.carFrontPane{
+    top: 60px;
+    margin-top: 105px;
+    margin-right: 64px;
+    transform: scale(1.3);
+}
+.carRearPane{
+    top: 60px;
+    margin-top: 230px;
+    margin-right: 70px;
+    transform: scale(1.2);
+}
+.carRearGlass{
+    top: 60px;
+    margin-top: 182px;
+    margin-right: 84px;
+    transform: scale(1.2);
 }
