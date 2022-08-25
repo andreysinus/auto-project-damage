@@ -5,7 +5,7 @@ import backLogo from '../../img/back.svg'
 import CarBack from '../carAllSides/carBack'
 import CarRoof from '../carAllSides/carRoof'
 import CarLeft from '../carAllSides/carLeft'
-import CarRight from '../carAllSides/carRight'
+//import CarRight from '../carAllSides/carRight'
 import CarRightNew from '../carAllSides/carRightNew'
 
 function CarChoosenSide(props) {
