@@ -4,7 +4,7 @@ import hood from '../../img/carViews/roof/hood-2.svg'
 import roof from '../../img/carViews/roof/roof-2.svg'
 import windshield from '../../img/carViews/roof/windshield-2.svg'
 import trunkGlass from '../../img/carViews/roof/trunk.svg'
-import ContentLoader from 'react-content-loader'
+import './carAllSides.scss'
 
 function CarRoofNew(props) {
   return (

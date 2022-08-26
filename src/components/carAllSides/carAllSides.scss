@@ -41,3 +41,22 @@
     z-index:400;
     margin-top: -12px;
 }
+.carFront{
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.carfront__windshield{
+    margin-top: -71px;
+    margin-bottom: 11px;
+}
+.carfront__mirrors{
+    margin-top: -47px;
+}
+.carfront__headlights{
+    z-index:500;
+    margin-top: 10px;
+    margin-bottom: 7px;
+}

@@ -1,18 +1,18 @@
 import React from 'react'
-import CarFront from '../carAllSides/carFront'
 import './carChoosenSide.scss'
 import backLogo from '../../img/back.svg'
 import CarBack from '../carAllSides/carBack'
 import CarLeft from '../carAllSides/carLeft'
-//import CarRight from '../carAllSides/carRight'
+
 import CarRightNew from '../carAllSides/carRightNew'
 import CarRoofNew from '../carAllSides/carRoofNew'
+import CarFrontNew from '../carAllSides/carFrontNew'
 
 function CarChoosenSide(props) {
   return (
     <div>
         <div className='carchoosen__button'><button onClick={()=>props.setAddProgressState("1")} className='carchoosen__button-back'><img src={backLogo} alt="Назад" /></button></div>
-        {props.carPart==="front"? <CarFront addBucket={props.addBucket}
+        {props.carPart==="front"? <CarFrontNew addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}
