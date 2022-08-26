@@ -3,10 +3,10 @@ import CarFront from '../carAllSides/carFront'
 import './carChoosenSide.scss'
 import backLogo from '../../img/back.svg'
 import CarBack from '../carAllSides/carBack'
-import CarRoof from '../carAllSides/carRoof'
 import CarLeft from '../carAllSides/carLeft'
 //import CarRight from '../carAllSides/carRight'
 import CarRightNew from '../carAllSides/carRightNew'
+import CarRoofNew from '../carAllSides/carRoofNew'
 
 function CarChoosenSide(props) {
   return (
@@ -32,7 +32,7 @@ function CarChoosenSide(props) {
                                           setAddProgressState={props.setAddProgressState}
                                           setChoosenCarParts={props.setChoosenCarParts}/>:
 
-         props.carPart==="roof"? <CarRoof addBucket={props.addBucket}
+         props.carPart==="roof"? <CarRoofNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
                                           setSelectMenuState={props.setSelectMenuState}
                                           setSelectedPart={props.setSelectedPart}

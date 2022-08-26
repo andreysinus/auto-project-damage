@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+.carImageButton{
+    border: 0;
+    background-color: transparent;
+    z-index: 401;
+}
+.carImageButton__hood{
+    margin: 0;
+}
+.carImageButton__windshield{
+    margin-top: -2px;
+    margin-bottom: 8px;
+}
+.carImageButton__roof{
+    margin-bottom: 10px;
+    margin-left: 1px;
+}
+.carImageButton__rearGlass{
+    margin-bottom: 20px;
+    
+}
+img{
+    border-radius: 0;
+}
