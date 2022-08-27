@@ -15,10 +15,11 @@
     top: 0;
     width: 300px;
     height: 450px;
-    padding-bottom: 60px;
+    padding-bottom: 90px;
     overflow:auto;
     background-color: #f3f3f3;
     border-radius: 15px;
+    z-index: 400;
 }
 .bucket__delete{
     z-index:200;
@@ -108,4 +109,32 @@
     background-color: transparent;
     margin-top: 3px;
     margin-left: 3px;
+}
+.bucket__footer{
+    display: flex;
+    top: calc(100% - 81px);
+    flex-direction: column;
+    position: absolute;
+    width: calc(100%);
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.5s ease;
+    z-index: 450;
+    
+}
+.bucket__footer.active{
+    -webkit-filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
+    filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
+}
+.bucket__confirm{
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 0;
+    background: linear-gradient(63.8deg, #324167 -53.91%, #A468B8 104.71%), #D9D9D9;
+    border-radius: 9px;
+    color: #f3f3f3; 
 }

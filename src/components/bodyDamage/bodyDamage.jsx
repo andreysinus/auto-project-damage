@@ -21,7 +21,7 @@ function BodyDamage(props) {
                                               queryParams={props.queryParams}/>
                                               
 
-       {props.selectMenuState==="2"? <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams}/> :<div></div>}
+       {props.selectMenuState==="2"? <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply}/> :<div></div>}
     </div>
   )
 }

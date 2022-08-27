@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import AllDamages from './components/allDamages/allDamages';
 import BodyDamage from './components/bodyDamage/bodyDamage';
@@ -6,7 +6,12 @@ import Logo from './components/logo/logo';
 import SelectMenu from './components/selectMenu/selectMenu';
 import queryString from "query-string"
 
+const telegram=window.Telegram.WebApp
+
 function App() {
+  useEffect(()=>{
+    telegram.ready();
+  })
   const queryParams = queryString.parse(window.location.search)
   const [isFirst, setIsFirst] = useState(true)
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
@@ -43,7 +48,9 @@ function App() {
     
   }
 
-
+  const onApply = () =>{
+    telegram.sendData("Повреждения были отправлены"); 
+  }
   return (
     <div className='container'>
       <div className="logo__anim"><Logo /></div>
@@ -62,7 +69,8 @@ function App() {
                   setCarPart={setCarPart}
                   choosenCarParts={choosenCarParts}
                   setChoosenCarParts={updateChoosen}
-                  queryParams={queryParams}/>
+                  queryParams={queryParams}
+                  onApply={onApply}/>
 
       { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart} choosenCarParts={choosenCarParts[0]} queryParams={queryParams}/> : <div></div>}
     </div>
