@@ -75,3 +75,26 @@
 .carback__trunk{
     z-index: 499;
 }
+.carSide__wheel{
+    display: flex;
+    align-items: center;
+    margin-top: -58px;
+    margin-right: -70px;
+    margin-bottom: 24px;
+}
+.carSide__rearwheel{
+    display: flex;
+    align-items: center;
+    margin-top: -87px;
+    margin-right: -67px;
+    margin-bottom: 24px;
+}
+.carSide__glasses{
+    display: flex;
+    flex-direction: column;
+    margin-top: -230px;
+    margin-left: -95px;
+}
+.carSides__left{
+    transform: scale(-100%, 100%);
+}

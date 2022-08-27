@@ -5,6 +5,7 @@ import trunk from '../../img/carViews/back/trunk.svg'
 import lRearlight from '../../img/carViews/back/lRearlight.svg'
 import rRearlight from '../../img/carViews/back/rRearlight.svg'
 import rBumper from '../../img/carViews/back/rBumper.svg'
+import rFoglight from '../../img/carViews/back/rFoglight.svg'
 import CarImageButton from '../carImageButton/carImageButton'
 
 function CarBackNew(props) {
@@ -68,7 +69,7 @@ function CarBackNew(props) {
         <CarImageButton src={rRearlight} selectedPart="rRearlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
         </div>
         <CarImageButton src={rBumper} selectedPart="rBumper" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
-
+        <CarImageButton src={rFoglight} selectedPart="rFoglight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
     </div>
   )
 }
