@@ -60,3 +60,18 @@
     margin-top: 10px;
     margin-bottom: 7px;
 }
+.carback__underpath{
+    position: absolute;
+    z-index:400;
+}
+.carback__rearlights{
+    z-index:500;
+    margin-top: -35px;
+}
+.carback__rearglass{
+    z-index:500;
+    margin-bottom: -17px;
+}
+.carback__trunk{
+    z-index: 499;
+}

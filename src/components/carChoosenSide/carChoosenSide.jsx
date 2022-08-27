@@ -1,12 +1,12 @@
 import React from 'react'
 import './carChoosenSide.scss'
 import backLogo from '../../img/back.svg'
-import CarBack from '../carAllSides/carBack'
 import CarLeft from '../carAllSides/carLeft'
 
 import CarRightNew from '../carAllSides/carRightNew'
 import CarRoofNew from '../carAllSides/carRoofNew'
 import CarFrontNew from '../carAllSides/carFrontNew'
+import CarBackNew from '../carAllSides/carBackNew'
 
 function CarChoosenSide(props) {
   return (
@@ -23,7 +23,7 @@ function CarChoosenSide(props) {
                                             setCarPart={props.setCarPart}
                                             setChoosenCarParts={props.setChoosenCarParts}/>:
 
-         props.carPart==="back"? <CarBack addBucket={props.addBucket}
+         props.carPart==="back"? <CarBackNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
                                           setSelectMenuState={props.setSelectMenuState}
                                           setSelectedPart={props.setSelectedPart}
