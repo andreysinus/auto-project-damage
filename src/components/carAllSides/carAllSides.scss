@@ -97,4 +97,9 @@
 }
 .carSides__left{
     transform: scale(-100%, 100%);
+    margin-left: -10px;
 }
+.carSides__right{
+    margin-left: 10px;
+}
+

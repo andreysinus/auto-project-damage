@@ -17,7 +17,7 @@ import rGlass from '../../img/carViews/side/rearGlass.svg'
 function CarRightNew(props) {
   return (
     <div>
-        <div className='carSides'>
+        <div className='carSides carSides__right'>
         <CarImageButton src={fFender} selectedPart="fFender" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
         <div className="carSide__wheel">
           <CarImageButton src={wheel} selectedPart="wheel" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
