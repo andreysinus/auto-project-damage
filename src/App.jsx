@@ -11,6 +11,7 @@ const telegram=window.Telegram.WebApp
 function App() {
   useEffect(()=>{
     telegram.ready();
+    telegram.expand();
   })
   const queryParams = queryString.parse(window.location.search)
   const [isFirst, setIsFirst] = useState(true)
