@@ -12,6 +12,7 @@ function CarChoosenSide(props) {
   return (
     <div>
         <div className='carchoosen__button'><button onClick={()=>props.setAddProgressState("1")} className='carchoosen__button-back'><img src={backLogo} alt="Назад" /></button></div>
+        <div className="carchoosen__body">
         {props.carPart==="front"? <CarFrontNew addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
@@ -58,6 +59,7 @@ function CarChoosenSide(props) {
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
                                             setChoosenCarParts={props.setChoosenCarParts}/>: <div></div>}
+        </div>
     </div>
   )
 }

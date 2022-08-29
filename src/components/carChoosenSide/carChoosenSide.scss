@@ -9,3 +9,16 @@
     border: 0;
     background-color: transparent;
 }
+.carchoosen__body{
+    opacity: 0;
+    animation: animStart .5s ease forwards;
+    animation-delay: .5s;
+}
+@keyframes animStart {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
