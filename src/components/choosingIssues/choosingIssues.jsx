@@ -26,7 +26,7 @@ function ChoosingIssues (props){
   let options = props.choosenCarParts;
   const [, updateState] = useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
-  
+  var photosCount=0;
   function updateParts(){
     props.setChoosenCarParts(options)
     forceUpdate();
@@ -44,6 +44,7 @@ function ChoosingIssues (props){
       <div className='choosingissue__body'>
         <p className='choosingissue__body-title'>Выберите тип, фотографию<br/>и степень повреждения:</p>
         {props.choosenCarParts.map((text, index)=>{
+          if (text.photo!==undefined) {photosCount++;}
           return <div key={index}>
               <div className="choosingissue__item">
                 {text.user===false ? <button className='choosingissue__add' onClick={()=>{options.push({name: text.name, object_id:text.Object_id, type: text.type, price: text.price, degree: "1", photo: undefined, user: true}); updateParts();}}><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,12 +83,12 @@ function ChoosingIssues (props){
         })}
       </div>
       <div className={props.choosenCarParts.length>2?'choosingissue__footer active':'choosingissue__footer'}>
-        <button className='choosingissue__addbutton' onClick={()=>{props.choosenCarParts.map((text)=>{
+        <button className={photosCount!==0 ? 'choosingissue__addbutton active': 'choosingissue__addbutton'} onClick={()=>{if (photosCount!==0){props.choosenCarParts.map((text)=>{
           if (text.photo!==undefined){
             props.addBucket(text.name, text.type, returnPrice(text), text.degree, text.photo, text.object_id)
           }
           return 0
-        }); props.setAddProgressState("1")}}>Добавить повреждения</button>
+        }); props.setAddProgressState("1")}}}>Добавить повреждения</button>
       </div>
     </div>
   )
