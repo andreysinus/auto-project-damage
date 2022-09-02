@@ -22,7 +22,6 @@ function SignaturePart(props) {
         }
         return 0;
     })
-    console.log(keys)
   return (
     <div>
         <div className="signaturepart__body">
