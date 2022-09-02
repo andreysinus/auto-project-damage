@@ -1,6 +1,7 @@
 import React from 'react'
 import AddDamages from '../addDamages/addDamages'
 import Bucket from '../bucket/bucket'
+import SignaturePart from '../signaturePart/signaturePart'
 import './bodyDamage.scss'
 
 function BodyDamage(props) {
@@ -19,9 +20,10 @@ function BodyDamage(props) {
                                               choosenCarParts={props.choosenCarParts}
                                               setChoosenCarParts={props.setChoosenCarParts}
                                               queryParams={props.queryParams}/>
-                                              
 
-       {props.selectMenuState==="2"? <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply}/> :<div></div>}
+      {props.selectMenuState==="2"? props.resultStep==="1"?
+          <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep}/> 
+          : <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep}/> :<div></div>}
     </div>
   )
 }
