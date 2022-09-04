@@ -48,7 +48,7 @@ function SignaturePart(props) {
                     })
                 }
                 <hr />
-                <p className="signaturepart__result-summary">Итого: {finalPrice}₽</p>
+                <p className="signaturepart__result-summary">Акт: {finalPrice}₽</p>
             </div>
             <div className="signaturepart">
                 <p className="signaturepart__subtitle">Поставьте подпись</p>

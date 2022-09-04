@@ -1,7 +1,6 @@
 import React from 'react'
 import './carChoosenSide.scss'
 
-
 import CarRightNew from '../carAllSides/carRightNew'
 import CarRoofNew from '../carAllSides/carRoofNew'
 import CarFrontNew from '../carAllSides/carFrontNew'
@@ -17,7 +16,7 @@ function CarChoosenSide(props) {
           </svg>
         </button></div>
         <div className="carchoosen__body">
-        {props.carPart==="front"? <CarFrontNew addBucket={props.addBucket}
+        {props.carPart==="front"? <div className=""><CarFrontNew addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}
@@ -26,43 +25,45 @@ function CarChoosenSide(props) {
                                             setAddProgressState={props.setAddProgressState}
                                             carPart={props.carPart}
                                             setCarPart={props.setCarPart}
-                                            setChoosenCarParts={props.setChoosenCarParts}/>:
+                                            setChoosenCarParts={props.setChoosenCarParts}/>
+                                            
+                                            </div>:
 
-         props.carPart==="back"? <CarBackNew addBucket={props.addBucket}
+         props.carPart==="back"? <div className=""><CarBackNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
                                           setSelectMenuState={props.setSelectMenuState}
                                           setSelectedPart={props.setSelectedPart}
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
                                           setAddProgressState={props.setAddProgressState}
-                                          setChoosenCarParts={props.setChoosenCarParts}/>:
+                                          setChoosenCarParts={props.setChoosenCarParts}/></div>:
 
-         props.carPart==="roof"? <CarRoofNew addBucket={props.addBucket}
+         props.carPart==="roof"? <div className=""><CarRoofNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
                                           setSelectMenuState={props.setSelectMenuState}
                                           setSelectedPart={props.setSelectedPart}
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
                                           setAddProgressState={props.setAddProgressState}
-                                          setChoosenCarParts={props.setChoosenCarParts}/>:
+                                          setChoosenCarParts={props.setChoosenCarParts}/></div>:
 
-         props.carPart==="left"? <CarLeftNew addBucket={props.addBucket}
+         props.carPart==="left"? <div className=""><CarLeftNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
                                           setSelectMenuState={props.setSelectMenuState}
                                           setSelectedPart={props.setSelectedPart}
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
                                           setAddProgressState={props.setAddProgressState}
-                                          setChoosenCarParts={props.setChoosenCarParts}/>:
+                                          setChoosenCarParts={props.setChoosenCarParts}/></div>:
                                           
-         props.carPart==="right"? <CarRightNew addBucket={props.addBucket}
+         props.carPart==="right"? <div className=""><CarRightNew addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}
                                             selectedPart={props.selectedPart}
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
-                                            setChoosenCarParts={props.setChoosenCarParts}/>: <div></div>}
+                                            setChoosenCarParts={props.setChoosenCarParts}/></div>: <div></div>}
         </div>
     </div>
   )
