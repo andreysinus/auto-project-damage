@@ -22,7 +22,6 @@ function AddDamages(props) {
                                                        setCarPart={props.setCarPart}
                                                        setChoosenCarParts={props.setChoosenCarParts}
                                                        /> 
-
       : props.addProgressState==="3" ?  <ChoosingIssues selectedPart={props.selectedPart} setAddProgressState={props.setAddProgressState}
                                         choosenCarParts={props.choosenCarParts}
                                         setChoosenCarParts={props.setChoosenCarParts} 
