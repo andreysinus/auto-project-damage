@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './signaturePart.scss'
+import SignaturePad from 'react-signature-canvas';
+
 function SignaturePart(props) {
     var dict = []
     var keys = []
     var finalPrice = 0;
+    const sigCanvas = useRef({});
     props.bucketState.map((text)=>{
         if (dict[text.name]!==undefined){
             dict[text.name]={
@@ -49,6 +52,17 @@ function SignaturePart(props) {
             </div>
             <div className="signaturepart">
                 <p className="signaturepart__subtitle">Поставьте подпись</p>
+                <div className='signaturepart__pole'>
+                    <SignaturePad ref={sigCanvas}
+                    canvasProps={{
+                        className: 'signaturepart__field'
+                    }}/>
+                </div>
+            </div>
+            <div className="signaturepart__footer">
+                <button className='signaturepart__confirm' onClick={()=>{}}>
+                    Cформировать
+                </button>
             </div>
         </div>
     </div>
