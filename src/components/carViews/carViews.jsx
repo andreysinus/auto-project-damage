@@ -12,6 +12,7 @@ function CarViews(props) {
         <BigButton carPart="right" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
         <BigButton carPart="roof" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
         <BigButton carPart="back" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
+        <BigButton carPart="interior" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
         <div className='carviews'>
             <img src={carViews} alt="Стороны авто" />
         </div>

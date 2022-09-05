@@ -32,7 +32,7 @@ function CarLeftNew(props) {
           <CarImageButton src={disk} selectedPart="disk" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
         </div>
         <div className='carSide__glasses'>
-         <CarImageButton src={fPane} selectedPart="fPane" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+          <CarImageButton src={fPane} selectedPart="fPane" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
           <CarImageButton src={fGlass} selectedPart="fGlass" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
           <CarImageButton src={rGlass} selectedPart="rGlass" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
           <CarImageButton src={rPane} selectedPart="rPane" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>

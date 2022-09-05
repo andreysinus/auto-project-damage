@@ -6,6 +6,7 @@ import CarRoofNew from '../carAllSides/carRoofNew'
 import CarFrontNew from '../carAllSides/carFrontNew'
 import CarBackNew from '../carAllSides/carBackNew'
 import CarLeftNew from '../carAllSides/carLeftNew'
+import CarInterior from '../carAllSides/carInterior'
 
 function CarChoosenSide(props) {
   return (
@@ -57,6 +58,14 @@ function CarChoosenSide(props) {
                                           setChoosenCarParts={props.setChoosenCarParts}/></div>:
                                           
          props.carPart==="right"? <div className=""><CarRightNew addBucket={props.addBucket}
+                                            selectMenuState={props.selectMenuState}
+                                            setSelectMenuState={props.setSelectMenuState}
+                                            setSelectedPart={props.setSelectedPart}
+                                            selectedPart={props.selectedPart}
+                                            addProgressState={props.addProgressState}
+                                            setAddProgressState={props.setAddProgressState}
+                                            setChoosenCarParts={props.setChoosenCarParts}/></div>:
+          props.carPart==="interior"? <div className=""><CarInterior addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}
