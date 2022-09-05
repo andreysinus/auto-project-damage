@@ -49,7 +49,7 @@ function CarImageButton(props) {
     }
   return (
         <a href="#detail" type='button' className={buttonClass} onClick={()=> {props.setChoosenCarParts(updateOptions(TitleCheck(props.selectedPart))); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"})}}>
-            <img src={props.src} alt={props.selectedPart}/>
+            <object type="image/svg+xml" data={props.src}> </object>
         </a>
   )
 }
