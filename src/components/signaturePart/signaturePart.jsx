@@ -72,7 +72,7 @@ function SignaturePart(props) {
                     <path d="M14.5485 20.551L11.3185 17.321L23.6599 17.321C24.1175 17.321 24.4876 16.9509 24.4876 16.4933C24.4876 16.0357 24.1175 15.6656 23.6599 15.6656L11.3253 15.6656L14.5553 12.4356C14.7168 12.2741 14.7975 12.0655 14.7975 11.8502C14.7975 11.6348 14.7168 11.4262 14.5553 11.2647C14.2323 10.9417 13.7141 10.9417 13.3911 11.2647L8.7547 15.9011C8.4317 16.2241 8.4317 16.7423 8.7547 17.0653L13.3911 21.7017C13.7141 22.0247 14.2323 22.0247 14.5553 21.7017C14.8715 21.3989 14.8715 20.874 14.5485 20.551Z" fill="#989898"/>
                     </svg></button>
                 </div>
-                <p className='signaturepart__title'>Итого</p>
+                <p className='signaturepart__title'>Акт</p>
             </div>
             <div className="signaturepart__result">
                 {
@@ -85,7 +85,7 @@ function SignaturePart(props) {
                     })
                 }
                 <hr />
-                <p className="signaturepart__result-summary">Акт: {finalPrice}₽</p>
+                <p className="signaturepart__result-summary">Итого: {finalPrice}₽</p>
             </div>
             <div className="signaturepart">
                 <p className="signaturepart__subtitle">Поставьте подпись</p>
