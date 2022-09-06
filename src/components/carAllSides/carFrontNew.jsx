@@ -19,19 +19,19 @@ function CarFrontNew(props) {
                     </svg>
                 </div>
                 <div className='carfront__windshield'>
-                <CarImageButton src={windshield} selectedPart="windshield" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+                <CarImageButton src={windshield} selectedPart="windshield" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
                 </div>
                 
-                <CarImageButton src={hood} selectedPart="hood" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+                <CarImageButton src={hood} selectedPart="hood" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
                 <div className='carfront__mirrors'>
-                <CarImageButton src={rightMirror} selectedPart="rMirror" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
-                <CarImageButton src={leftMirror} selectedPart="lMirror" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+                <CarImageButton src={rightMirror} selectedPart="rMirror" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
+                <CarImageButton src={leftMirror} selectedPart="lMirror" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
                 </div>
                 <div className='carfront__headlights'>
-                <CarImageButton src={frontRightHeadlight} selectedPart="rHeadlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
-                <CarImageButton src={frontLeftHeadlight} selectedPart="lHeadlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+                <CarImageButton src={frontRightHeadlight} selectedPart="rHeadlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
+                <CarImageButton src={frontLeftHeadlight} selectedPart="lHeadlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
                 </div>
-                <CarImageButton src={frontBumper} selectedPart="fBumper" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+                <CarImageButton src={frontBumper} selectedPart="fBumper" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
         </div>
     </div>
   )

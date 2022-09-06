@@ -48,7 +48,7 @@ function CarImageButton(props) {
       return options
     }
   return (
-        <a href="#detail" type='button' className={buttonClass} onClick={()=> {props.setChoosenCarParts(updateOptions(TitleCheck(props.selectedPart))); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"})}}>
+        <a href="#detail" type='button' className={buttonClass} onClick={()=> {var arr=updateOptions(TitleCheck(props.selectedPart)); props.setChoosenCarParts(arr); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"}); props.getCarDamages(arr[0].object_id);}}>
             <img src={props.src} alt={props.selectedPart}/>
         </a>
   )

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import './signaturePart.scss'
 import SignaturePad from 'react-signature-canvas';
+const axios = require('axios');
 
 function SignaturePart(props) {
     var dict = []
@@ -25,6 +26,42 @@ function SignaturePart(props) {
         }
         return 0;
     })
+    const getSignature = () =>{
+        return sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
+    }
+
+    const postDamages = () =>{
+        let send = [{"sign":getSignature()}]
+        props.bucketState.map((text)=>{
+            send.push({
+            "Object_id":text.name,"Type": text.type,
+            "Grade": text.degree,
+            "Price": text.price,
+            "Photos":[{
+                "name":"000000000_"+text.degree+"_555555",
+                "photo":text.photo
+            }]});
+            return 0;}
+        )
+        console.log(send)
+        let data = JSON.stringify(send);
+        let config = {
+        method: 'post',
+        url: 'http://тест.атимо.рф/Taksopark/hs/WebApp/PostDamages?grz=ВМ43899&Telephone=+79313033207',
+        headers: { 
+            'Authorization': 'Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ==', 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+        axios(config)
+        .then((response) => {
+        console.log(JSON.stringify(response.data));
+        })
+        .catch((error) => {
+        console.log(error);
+        });
+    }
   return (
     <div>
         <div className="signaturepart__body">
@@ -60,7 +97,7 @@ function SignaturePart(props) {
                 </div>
             </div>
             <div className="signaturepart__footer">
-                <button className='signaturepart__confirm' onClick={()=>{}}>
+                <button className='signaturepart__confirm' onClick={()=>{postDamages()}}>
                     Cформировать
                 </button>
             </div>

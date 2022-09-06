@@ -35,9 +35,9 @@ function CarInterior(props) {
                 <path d="M21.8456 8.45282L20.9966 1.20303" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
-            <CarImageButton src={lSeat} selectedPart="lSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
-            <CarImageButton src={rSeat} selectedPart="rSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
-            <CarImageButton src={rearSofa} selectedPart="rearSofa" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts}/>
+            <CarImageButton src={lSeat} selectedPart="lSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
+            <CarImageButton src={rSeat} selectedPart="rSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
+            <CarImageButton src={rearSofa} selectedPart="rearSofa" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
 
         </div>
     </div>
