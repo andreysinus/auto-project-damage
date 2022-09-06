@@ -34,6 +34,7 @@ function App() {
   }
 
   const getCarDamages = (object_id) =>{
+    setDamagesArray([])
     if (choosenCarParts!==undefined){
       let config = {
         method: 'get',
@@ -45,7 +46,6 @@ function App() {
         axios(config)
         .then((response) => {
             if (typeof(response.data) !== 'string'){ 
-              setDamagesArray([])
               response.data.map((text)=>{
                  addDamagesArray(text.photo);
                  return 0;

@@ -22,8 +22,8 @@ export const TitleCheck = (carPart)=>{
         case "rThreshold": return "Порог";
         case "fPane": return "Стекло передней форточки";
         case "rPane": return "Стекло задней форточки";
-        case "lfGlass": return "Стекло передней двери";
-        case "lrGlass": return "Стекло задней двери";
+        case "fGlass": return "Стекло передней двери";
+        case "rGlass": return "Стекло задней двери";
         case "rfGlass": return "Стекло передней двери";
         case "rrGlass": return "Стекло задней двери";
         case "rearGlass": return "Заднее стекло";

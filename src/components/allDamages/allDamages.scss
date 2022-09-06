@@ -23,3 +23,30 @@
 .allpreview{
     position: absolute;
 }
+.alldamages__item{
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    justify-content:space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-items: center;
+}
+.alldamages__item-title{
+    margin:0;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.alldamages__getpreview{
+    border: 0;
+    background: linear-gradient(63.8deg, #324167 -53.91%, #A468B8 104.71%), #D9D9D9;
+    border-radius: 5px;
+    color: white;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
