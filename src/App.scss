@@ -15,9 +15,11 @@
   }
   .logo__anim{
     animation: logoAnim 2s forwards ease;
+    will-change: transform, opacity;
   }
   .logo__anim2{
     animation: logoAnim2 2s forwards ease;
+    will-change: transform, opacity;
   }
   @keyframes logoAnim {
     0%{
