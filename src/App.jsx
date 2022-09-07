@@ -4,7 +4,7 @@ import AllDamages from './components/allDamages/allDamages';
 import BodyDamage from './components/bodyDamage/bodyDamage';
 import Logo from './components/logo/logo';
 import SelectMenu from './components/selectMenu/selectMenu';
-
+import queryString from "query-string"
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
 
@@ -13,7 +13,7 @@ function App() {
     telegram.expand();
     telegram.ready();
   })
-  const queryParams = {grz:"vk20478", telephone:"79313033207"}
+  const queryParams = queryString.parse(window.location.search)
   //const [isFirst, setIsFirst] = useState(true)
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
@@ -82,6 +82,7 @@ function App() {
   }
   return (
     <div className='container'>
+      {queryParams.grz}
       <div className="logo__anim"><Logo /></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
 
