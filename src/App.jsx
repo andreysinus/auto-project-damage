@@ -13,7 +13,7 @@ function App() {
     telegram.expand();
     telegram.ready();
   })
-  const queryParams = {grz:"вк20478", telephone:"79313033207"}
+  const queryParams = {grz:"vk20478", telephone:"79313033207"}
   //const [isFirst, setIsFirst] = useState(true)
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
