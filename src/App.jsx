@@ -8,6 +8,7 @@ import queryString from "query-string"
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
 
+
 function App() {
   useEffect(()=>{
     telegram.expand();
@@ -37,12 +38,13 @@ function App() {
     setDamagesArray([])
     if (choosenCarParts!==undefined){
       let config = {
-        method: 'get',
+        method: 'GET',
         url: `https://тест.атимо.рф/Taksopark/hs/WebApp/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,
         headers: { 
-          'Authorization': 'Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ=='
+          'Authorization': 'Basic V0E6V2E1ODUxMzM1'
         }
       };
+      
         axios(config)
         .then((response) => {
             if (typeof(response.data) !== 'string'){ 
@@ -57,25 +59,24 @@ function App() {
         }); 
     }
   }
-  // if (isFirst)
-  // {
-  //   setIsFirst(false);
-  //   var myHeaders = new Headers();
-  //   myHeaders.append("Authorization", "Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ==");
+  //  if (isFirst)
+  //  {
+  //    setIsFirst(false);
+  //    var myHeaders = new Headers();
+  //    myHeaders.append("Authorization", "Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ==");
     
-  //   var requestOptions = {
-  //     method: 'GET',
-  //     headers: myHeaders,
-  //     redirect: 'follow'
-  //   };
+  //    var requestOptions = {
+  //      method: 'GET',
+  //      headers: myHeaders,
+  //    };
     
-  //   fetch("http://тест.атимо.рф/Taksopark/hs/WebApp/GetDamage", requestOptions)
-  //     .then(response => response.text())
-  //     .then(result => console.log(result))
-  //     .catch(error => console.log('error', error));
+  //    fetch("http://тест.атимо.рф/Taksopark/hs/WebApp/GetDamage", requestOptions)
+  //      .then(response => response.text())
+  //      .then(result => console.log(result))
+  //      .catch(error => console.log('error', error));
 
     
-  // }
+  //  }
 
   const onApply = () =>{
     telegram.sendData("Повреждения были отправлены"); 

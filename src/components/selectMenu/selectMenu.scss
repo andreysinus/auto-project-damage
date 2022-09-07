@@ -23,6 +23,7 @@
     text-transform: uppercase;
     transform: translateY(10px);
     transition: .5s ease;
+    will-change: transform, opacity;
 }
 .selectmenu__item.active{
     transform: translateY(3px);
