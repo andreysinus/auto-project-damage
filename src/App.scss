@@ -16,10 +16,12 @@
   .logo__anim{
     animation: logoAnim 2s forwards ease;
     -webkit-transform: translate3d(0,0,0);
+    will-change: transform;
   }
   .logo__anim2{
     animation: logoAnim2 2s forwards ease;
     -webkit-transform: translate3d(0,0,0);
+    will-change: transform;
   }
   @keyframes logoAnim {
     0%{
