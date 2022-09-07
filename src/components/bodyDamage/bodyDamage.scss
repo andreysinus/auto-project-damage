@@ -11,6 +11,8 @@
     opacity: 0;
     animation: bodyAnim 1s forwards ease;
     animation-delay: 1.2s;
+    -webkit-transform: translate3d(0,0,0);
+    will-change: transform;
 }
 
 @keyframes bodyAnim {
