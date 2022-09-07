@@ -83,7 +83,6 @@ function App() {
   }
   return (
     <div className='container'>
-      {queryParams.grz}
       <div className="logo__anim"><Logo /></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
 
