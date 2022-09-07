@@ -38,7 +38,7 @@ function App() {
     if (choosenCarParts!==undefined){
       let config = {
         method: 'get',
-        url: `http://тест.атимо.рф/Taksopark/hs/WebApp/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,
+        url: `https://тест.атимо.рф/Taksopark/hs/WebApp/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,
         headers: { 
           'Authorization': 'Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ=='
         }
