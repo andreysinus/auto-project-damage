@@ -33,9 +33,10 @@ function SignaturePart(props) {
     const postDamages = () =>{
         let res
         let array=[]
+
         props.bucketState.map((text)=>{
             array.push({
-            "Object_id":text.name,"Type": text.type,
+            "Object_id":text.object_id,"Type": text.type,
             "Grade": text.degree,
             "Price": text.price,
             "Photos":[{
@@ -65,6 +66,7 @@ function SignaturePart(props) {
         
          return res
     }
+    console.log(props.bucketState)
   return (
     <div>
         <div className="signaturepart__body">
