@@ -45,7 +45,6 @@ function App() {
           'Authorization': 'Basic V0E6V2E1ODUxMzM1',
           'Accept': '*/*',
           'Content-Type':'application/json',
-          'withCredentials': 'true'
         },
         data : data
       };
