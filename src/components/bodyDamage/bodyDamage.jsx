@@ -24,7 +24,7 @@ function BodyDamage(props) {
 
       {props.selectMenuState==="2"? props.resultStep==="1"?
           <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep}/> 
-          : <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep}/> :<div></div>}
+          : <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams}/> :<div></div>}
     </div>
   )
 }

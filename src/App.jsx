@@ -15,7 +15,7 @@ function App() {
     telegram.ready();
   })
   const queryParams = queryString.parse(window.location.search)
-  //const [isFirst, setIsFirst] = useState(true)
+  const [isFirst, setIsFirst] = useState(true)
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
   const [addProgressState, setAddProgressState] = useState("1") // 1 = выбора части авто; 2 = Выбор конкретной детали авто; 3 = Меню добавление выбранной детали 
@@ -36,13 +36,18 @@ function App() {
 
   const getCarDamages = (object_id) =>{
     setDamagesArray([])
-    if (choosenCarParts!==undefined){
+    let data = '';
+    console.log(object_id)
       let config = {
         method: 'GET',
-        url: `https://xn--e1aybc.xn--80aqmir.xn--p1ai/Taksopark/hs/WebApp/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,
+        url: `${queryParams.base}/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,
         headers: { 
-          'Authorization': 'Basic V0E6V2E1ODUxMzM1'
-        }
+          'Authorization': 'Basic V0E6V2E1ODUxMzM1',
+          'Accept': '*/*',
+          'Content-Type':'application/json',
+          'withCredentials': 'true'
+        },
+        data : data
       };
       
         axios(config)
@@ -57,26 +62,12 @@ function App() {
         .catch((error) => {
           console.log(error);
         }); 
-    }
   }
-  //  if (isFirst)
-  //  {
-  //    setIsFirst(false);
-  //    var myHeaders = new Headers();
-  //    myHeaders.append("Authorization", "Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ==");
-    
-  //    var requestOptions = {
-  //      method: 'GET',
-  //      headers: myHeaders,
-  //    };
-    
-  //    fetch("http://тест.атимо.рф/Taksopark/hs/WebApp/GetDamage", requestOptions)
-  //      .then(response => response.text())
-  //      .then(result => console.log(result))
-  //      .catch(error => console.log('error', error));
-
-    
-  //  }
+     if (isFirst)
+     {
+       setIsFirst(false);
+       
+    }
 
   const onApply = () =>{
     telegram.sendData("Повреждения были отправлены"); 
@@ -85,7 +76,6 @@ function App() {
     <div className='container'>
       <div className="logo__anim"><Logo /></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
-
       <BodyDamage selectMenuState={selectMenuState}
                   setSelectMenuState={setSelectMenuState}
                   addBucket={addBucket}

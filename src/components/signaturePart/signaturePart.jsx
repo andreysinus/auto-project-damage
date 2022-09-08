@@ -31,9 +31,10 @@ function SignaturePart(props) {
     }
 
     const postDamages = () =>{
-        let send = [{"sign":getSignature()}]
+        let res
+        let array=[]
         props.bucketState.map((text)=>{
-            send.push({
+            array.push({
             "Object_id":text.name,"Type": text.type,
             "Grade": text.degree,
             "Price": text.price,
@@ -43,24 +44,26 @@ function SignaturePart(props) {
             }]});
             return 0;}
         )
+        let send = [{"Sign":getSignature(), "Damages":array}]
         console.log(send)
-        let data = JSON.stringify(send);
-        let config = {
-        method: 'post',
-        url: 'http://тест.атимо.рф/Taksopark/hs/WebApp/PostDamages?grz=ВМ43899&Telephone=+79313033207',
-        headers: { 
-            'Authorization': 'Basic 0JDQtNC80LjQvdC40YHRgtGA0LDRgtC+0YA6MzQ2MjYwOQ==', 
-            'Content-Type': 'application/json'
-        },
-        data : data
-        };
-        axios(config)
-        .then((response) => {
-        console.log(JSON.stringify(response.data));
-        })
-        .catch((error) => {
-        console.log(error);
-        });
+         let config = {
+         method: 'post',
+         url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
+         headers: { 
+             'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
+             'Content-Type': 'application/json'
+         },
+         data : send
+         };
+         axios(config)
+         .then((response) => {
+         console.log(JSON.stringify(response.data));
+         })
+         .catch((error) => {
+         console.log(error);
+         });
+        
+         return res
     }
   return (
     <div>
