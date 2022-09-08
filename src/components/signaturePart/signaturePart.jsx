@@ -30,42 +30,44 @@ function SignaturePart(props) {
         return sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
     }
 
+
     const postDamages = () =>{
         let res
         let array=[]
-
+        const regex = /data:.*base64,/
         props.bucketState.map((text)=>{
             array.push({
             "Object_id":text.object_id,"Type": text.type,
             "Grade": text.degree,
             "Price": text.price,
             "Photos":[{
-                "name":"000000000_"+text.degree+"_555555",
-                "photo":text.photo
+                "name":"000000123_"+text.degree+"_555555",
+                "photo":text.photo.replace(regex, "")
             }]});
             return 0;}
         )
-        let send = [{"Sign":getSignature(), "Damages":array}]
+        let send = {"Sign":getSignature().replace(regex, ""), "Damages":array}
         console.log(send)
-         let config = {
-         method: 'post',
-         url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
-         headers: { 
-             'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
-             'Content-Type': 'application/json'
-         },
-         data : send
-         };
-         axios(config)
-         .then((response) => {
-         console.log(JSON.stringify(response.data));
-         })
-         .catch((error) => {
-         console.log(error);
-         });
+          let config = {
+          method: 'post',
+          url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
+          headers: { 
+              'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
+              'Content-Type': 'application/json'
+          },
+          data : send
+          };
+          axios(config)
+          .then((response) => {
+          console.log(JSON.stringify(response.data));
+          })
+          .catch((error) => {
+          console.log(error);
+          });
         
          return res
     }
+    
     console.log(props.bucketState)
   return (
     <div>
