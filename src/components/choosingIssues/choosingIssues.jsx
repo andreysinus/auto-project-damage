@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './choosingIssues.scss'
 import {Upload} from 'antd'
 import SelectDegree from '../selectDegree/selectDegree';
+import Resizer from "react-image-file-resizer";
 
 function getBase64(file, cb) {
   let reader = new FileReader();
@@ -63,8 +64,21 @@ function ChoosingIssues (props){
                   accept=".png,.jpeg,.doc"
                   beforeUpload={(file)=>{
                     getBase64(file, (result)=>{
-                      options[index].photo=result;
-                      updateParts();
+                      Resizer.imageFileResizer(
+                        file,
+                        1000,
+                        1000,
+                        "base64",
+                        100,
+                        0,
+                        (uri) => {
+                          options[index].photo=uri;
+                          updateParts();
+                        },
+                        "base64",
+                        200,
+                        200
+                      );
                     })
                   }}>
                   
