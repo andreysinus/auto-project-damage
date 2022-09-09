@@ -1,6 +1,5 @@
 import React from 'react'
 import { TitleCheck } from '../checkTitle'
-import damages from '../../jsons/response.json'
 import { Unific } from './unification'
 import './carImageButton.scss'
 
@@ -21,7 +20,7 @@ function CarImageButton(props) {
     }
     function updateOptions(){
       let options = []
-      damages.map((text)=>{
+      props.damageList.map((text)=>{
         if (text.Object===Unific(TitleCheck(props.selectedPart))){
           let x = findType(options, text)
           if (x!==false){
@@ -48,7 +47,7 @@ function CarImageButton(props) {
       return options
     }
   return (
-        <a href="#detail" type='button' className={buttonClass} onClick={()=> {var arr=updateOptions(TitleCheck(props.selectedPart)); props.setChoosenCarParts(arr); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"}); props.getCarDamages(arr[0].object_id);}}>
+        <a href="#detail" type='button' className={buttonClass} onClick={()=> {var arr=updateOptions(TitleCheck(props.selectedPart)); props.setChoosenCarParts(arr); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"}); props.getCarprops.damageList(arr[0].object_id);}}>
             <img src={props.src} alt={props.selectedPart}/>
         </a>
   )

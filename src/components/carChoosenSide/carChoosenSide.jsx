@@ -26,7 +26,7 @@ function CarChoosenSide(props) {
                                             setAddProgressState={props.setAddProgressState}
                                             carPart={props.carPart}
                                             setCarPart={props.setCarPart}
-                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/>
+                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
                                             
                                             </div>:
 
@@ -37,7 +37,7 @@ function CarChoosenSide(props) {
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
                                           setAddProgressState={props.setAddProgressState}
-                                          setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/></div>:
+                                          setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
 
          props.carPart==="roof"? <div className=""><CarRoofNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
@@ -46,7 +46,7 @@ function CarChoosenSide(props) {
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
                                           setAddProgressState={props.setAddProgressState}
-                                          setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/></div>:
+                                          setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
 
          props.carPart==="left"? <div className=""><CarLeftNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
@@ -55,7 +55,7 @@ function CarChoosenSide(props) {
                                           selectedPart={props.selectedPart}
                                           addProgressState={props.addProgressState}
                                           setAddProgressState={props.setAddProgressState}
-                                          setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/></div>:
+                                          setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
                                           
          props.carPart==="right"? <div className=""><CarRightNew addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
@@ -64,7 +64,7 @@ function CarChoosenSide(props) {
                                             selectedPart={props.selectedPart}
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
-                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/></div>:
+                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
           props.carPart==="interior"? <div className=""><CarInterior addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
@@ -72,7 +72,7 @@ function CarChoosenSide(props) {
                                             selectedPart={props.selectedPart}
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
-                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages}/></div>: <div></div>}
+                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>: <div></div>}
         </div>
     </div>
   )

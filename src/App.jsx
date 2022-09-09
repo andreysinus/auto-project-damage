@@ -5,6 +5,8 @@ import BodyDamage from './components/bodyDamage/bodyDamage';
 import Logo from './components/logo/logo';
 import SelectMenu from './components/selectMenu/selectMenu';
 import queryString from "query-string"
+import damages from './jsons/response.json'
+
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
 
@@ -15,7 +17,7 @@ function App() {
     telegram.ready();
   })
   const queryParams = queryString.parse(window.location.search)
-  const [isFirst, setIsFirst] = useState(true)
+
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
   const [addProgressState, setAddProgressState] = useState("1") // 1 = выбора части авто; 2 = Выбор конкретной детали авто; 3 = Меню добавление выбранной детали 
@@ -24,6 +26,7 @@ function App() {
   const [choosenCarParts, setChoosenCarParts] = useState({name:"Неизвестно", object_id:999, type:"Неизвестно", price: 0, degree: 0, photo: undefined}); // Выбранная часть авто {name:"Неизвестно", type:"Неизвестно", price: 0, degree: 0, photo: undefined}
   const [resultStep, setResultStep] = useState("1");
   const [damagesArray, setDamagesArray] = useState([])
+  const [damageList, setDamageList] = useState()
   const addBucket = (name, type, price, degree, photo, object_id)=>{
     setBucketState((prevState)=>[...prevState, {name:name, type:type, price:price, degree: degree, photo:photo, object_id:object_id}]) // Добавление значения в массив выбранных повреждений
   }
@@ -62,20 +65,28 @@ function App() {
           console.log(error);
         }); 
   }
-     if (isFirst)
-     {
-       setIsFirst(false);
-       
+    if (damageList===undefined)
+    {
+      let config = {
+        method: 'get',
+        url: 'https://тест.атимо.рф/Taksopark/hs/WebApp/GetDamage',
+        headers: { 
+          'Authorization': 'Basic V0E6V2E1ODUxMzM1'
+        }
+      };
+      axios(config)
+      .then((response) => {
+        setDamageList(response.data)
+      })
+      .catch((error) => {
+        setDamageList(damages)
+      });
     }
-
   const onApply = () =>{
     telegram.sendData("Повреждения были отправлены"); 
   }
   return (
     <div className='container'>
-      {queryParams.grz}<br/>
-      {queryParams.base}<br/>
-      {queryParams.telephone}<br/>
       <div className="logo__anim"><Logo /></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
       <BodyDamage selectMenuState={selectMenuState}
@@ -95,7 +106,8 @@ function App() {
                   onApply={onApply}
                   resultStep={resultStep}
                   setResultStep={setResultStep}
-                  getCarDamages={getCarDamages}/>
+                  getCarDamages={getCarDamages}
+                  damageList={damageList}/>
 
       { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart} choosenCarParts={choosenCarParts[0]} queryParams={queryParams} damagesArray={damagesArray}/> : <div></div>}
     </div>

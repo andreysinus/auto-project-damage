@@ -20,7 +20,8 @@ function BodyDamage(props) {
                                               choosenCarParts={props.choosenCarParts}
                                               setChoosenCarParts={props.setChoosenCarParts}
                                               queryParams={props.queryParams}
-                                              getCarDamages={props.getCarDamages}/>
+                                              getCarDamages={props.getCarDamages}
+                                              damageList={props.damageList}/>
 
       {props.selectMenuState==="2"? props.resultStep==="1"?
           <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep}/> 

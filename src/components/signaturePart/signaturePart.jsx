@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import './signaturePart.scss'
 import SignaturePad from 'react-signature-canvas';
-const axios = require('axios');
+//const axios = require('axios');
 
 function SignaturePart(props) {
     var dict = []
@@ -48,22 +48,22 @@ function SignaturePart(props) {
         )
         let send = {"Sign":getSignature().replace(regex, ""), "Damages":array}
         console.log(send)
-          let config = {
-          method: 'post',
-          url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
-          headers: { 
-              'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
-              'Content-Type': 'application/json'
-          },
-          data : send
-          };
-          axios(config)
-          .then((response) => {
-          console.log(JSON.stringify(response.data));
-          })
-          .catch((error) => {
-          console.log(error);
-          });
+        //   let config = {
+        //   method: 'post',
+        //   url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
+        //   headers: { 
+        //       'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
+        //       'Content-Type': 'application/json'
+        //   },
+        //   data : send
+        //   };
+        //   axios(config)
+        //   .then((response) => {
+        //   console.log(JSON.stringify(response.data));
+        //   })
+        //   .catch((error) => {
+        //   console.log(error);
+        //   });
         
          return res
     }
