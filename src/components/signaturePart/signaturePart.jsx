@@ -33,7 +33,7 @@ function SignaturePart(props) {
         )
 
         let send = {"Sign":getSignature().replace(regex, ""), "Damages":array}
-        console.log(send)
+        setVisibleLoading(true)
            let config = {
            method: 'post',
            url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
@@ -47,10 +47,12 @@ function SignaturePart(props) {
            .then((response) => {
              res = "Акт был сформирован"
              telegram.sendData(res)
+             console.log('sended')
            })
            .catch((error) => {
              res = error.response.data.Error;
              telegram.sendData(res)
+             console.log('sended')
            });
     }
     
@@ -79,7 +81,7 @@ function SignaturePart(props) {
                 </div>
             </div>
             <div className="signaturepart__footer">
-                <button className='signaturepart__confirm' onClick={()=>{postDamages(); setVisibleLoading(true)}}>
+                <button className='signaturepart__confirm' onClick={()=>{postDamages();}}>
                     Cформировать
                 </button>
             </div>
