@@ -40,7 +40,6 @@ function App() {
   const getCarDamages = (object_id) =>{
     setDamagesArray([])
     let data = '';
-    console.log(object_id)
       let config = {
         method: 'GET',
         url: `${queryParams.base}/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,

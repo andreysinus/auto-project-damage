@@ -13,6 +13,7 @@
     "fs": "^0.0.1-security",
     "handy-svg": "^1.0.8",
     "jsonfile": "^6.1.0",
+    "lottie-react": "^2.3.1",
     "path-browserify": "^1.0.1",
     "query-string": "^7.1.1",
     "react": "^18.2.0",

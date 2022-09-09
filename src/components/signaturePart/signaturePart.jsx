@@ -1,11 +1,12 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import './signaturePart.scss'
 import SignaturePad from 'react-signature-canvas';
+import LoadingPage from '../loading/loadingPage.jsx';
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
 
 function SignaturePart(props) {
-
+    const [visibleLoading, setVisibleLoading] = useState(false)
     const sigCanvas = useRef({});
     
     const getSignature = () =>{
@@ -14,20 +15,25 @@ function SignaturePart(props) {
 
     const postDamages = () =>{
         let res = undefined
+        let x=0
         let array=[]
         const regex = /data:.*base64,/
+        var currentdate = new Date();
         props.bucketState.map((text)=>{
             array.push({
             "Object_id":text.object_id,"Type": text.type,
             "Grade": text.degree,
             "Price": text.price,
             "Photos":[{
-                "name":"000000123_"+text.degree+"_555555",
+                "name":`${text.name.replace(" ", "")}_${currentdate.getDate()}${currentdate.getMonth()}${currentdate.getFullYear()}${currentdate.getHours()}${currentdate.getMinutes()}${currentdate.getSeconds()}${x}`,
                 "photo":text.photo.replace(regex, "")
             }]});
+            x++;
             return 0;}
         )
+
         let send = {"Sign":getSignature().replace(regex, ""), "Damages":array}
+        console.log(send)
            let config = {
            method: 'post',
            url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
@@ -51,6 +57,9 @@ function SignaturePart(props) {
     console.log(props.bucketState)
   return (
     <div>
+        {visibleLoading? <div className="signaturepart__loading">
+            <LoadingPage/>
+        </div>: <></>}
         <div className="signaturepart__body">
         <div className="signaturepart__header">
                 <div className='signaturepart__back'><button onClick={()=>props.setResultStep("2")} className='carchoosen__button-back'>
@@ -70,7 +79,7 @@ function SignaturePart(props) {
                 </div>
             </div>
             <div className="signaturepart__footer">
-                <button className='signaturepart__confirm' onClick={()=>{postDamages()}}>
+                <button className='signaturepart__confirm' onClick={()=>{postDamages(); setVisibleLoading(true)}}>
                     Cформировать
                 </button>
             </div>
