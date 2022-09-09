@@ -47,12 +47,13 @@ function SignaturePart(props) {
            .then((response) => {
              res = "Акт был сформирован"
              telegram.sendData(res)
-             console.log('sended')
            })
            .catch((error) => {
              res = error.response.data.Error;
+             if (res===undefined){
+                res="Ошибка выполнения запроса передачи информации"
+             }
              telegram.sendData(res)
-             console.log('sended')
            });
     }
     
