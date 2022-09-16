@@ -38,7 +38,7 @@ function App() {
   }
 
   const getCarDamages = (object_id) =>{
-    setDamagesArray([])
+    setDamagesArray()
     let data = '';
       let config = {
         method: 'GET',
@@ -54,10 +54,14 @@ function App() {
         axios(config)
         .then((response) => {
             if (typeof(response.data) !== 'string'){ 
+              setDamagesArray([])
               response.data.map((text)=>{
                  addDamagesArray(text.photo);
                  return 0;
               })
+            }
+            else{
+              setDamagesArray(response.data)
             }
         })
         .catch((error) => {
