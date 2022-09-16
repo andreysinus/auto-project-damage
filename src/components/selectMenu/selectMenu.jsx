@@ -13,7 +13,7 @@ function SelectMenu(props) {
   return (
     <div className='selectmenu select__anim'>
         <button className={addDamClass} onClick={()=>props.setSelectState("1")}><p>Добавить<br/>повреждение</p></button>
-        <button className={listDamClass} onClick={()=>props.setSelectState("2")}><p>Список<br/>выбранных</p><div className='selectmenu__count'>{props.bucketLength}</div></button>
+        <button className={listDamClass} onClick={()=>props.setSelectState("2")}><p>Список<br/>повреждений</p><div className='selectmenu__count'>{props.bucketLength}</div></button>
     </div>
   )
 }

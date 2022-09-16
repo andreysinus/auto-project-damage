@@ -68,7 +68,7 @@ function App() {
     {
       let config = {
         method: 'get',
-        url: 'https://тест.атимо.рф/Taksopark/hs/WebApp/GetDamage',
+        url: `${queryParams.base}/GetDamage`,
         headers: { 
           'Authorization': 'Basic V0E6V2E1ODUxMzM1'
         }
