@@ -13,6 +13,9 @@ function CarViews(props) {
           <BigButton carPart="roof" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
           <BigButton carPart="back" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
           <BigButton carPart="interior" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
+          <BigButton carPart="washing" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
+          <BigButton carPart="documents" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
+          <BigButton carPart="equipment" setPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/>
         </div>
         <div className='carviews'>
         <svg width="255" height="378" viewBox="0 0 255 378" fill="none" xmlns="http://www.w3.org/2000/svg">
