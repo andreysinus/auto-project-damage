@@ -1,5 +1,7 @@
 .missing{
-
+    &__checkbox{
+        transform: scale(2);
+    }
     &__footer{
         position: absolute;
         margin-top: -70px;
