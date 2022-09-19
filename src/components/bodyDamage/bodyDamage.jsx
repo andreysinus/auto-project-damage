@@ -26,14 +26,18 @@ function BodyDamage(props) {
                                               documentsArray={props.documentsArray}
                                               equipmentArray={props.equipmentArray}
                                               setDocumentsArray={props.setDocumentsArray}
-                                              setEquipmentArray={props.setEquipmentArray}/>
+                                              setEquipmentArray={props.setEquipmentArray}
+                                              washing={props.washing}
+                                              setWashing={props.setWashing}/>
       {props.selectMenuState==="2"? props.resultStep==="1"?
           <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep} documentsArray={props.documentsArray}
           equipmentArray={props.equipmentArray}
           setDocumentsArray={props.setDocumentsArray}
-          setEquipmentArray={props.setEquipmentArray}/> 
+          setEquipmentArray={props.setEquipmentArray}
+          washing={props.washing}
+          setWashing={props.setWashing}/> 
           : props.resultStep==="2"? <FinalDamages bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams} documentsArray={props.documentsArray}
-          equipmentArray={props.equipmentArray}
+          equipmentArray={props.equipmentArray} washing={props.washing} setWashing={props.setWashing}
           />: <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams}/>:<div></div>}
     </div>
   )

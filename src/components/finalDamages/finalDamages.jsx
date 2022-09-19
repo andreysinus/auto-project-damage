@@ -5,6 +5,7 @@ function FinalDamages(props) {
     var dict = []
     var keys = []
     var finalPrice = 0;
+    if (props.washing.need===true) finalPrice+=Number(props.washing.price)
     props.bucketState.map((text)=>{
         if (dict[text.name]!==undefined){
             dict[text.name]={
@@ -36,9 +37,17 @@ function FinalDamages(props) {
                 <p className='damagelist__title'>Акт</p>
             </div>
             <div className="damagelist__result">
-                {props.bucketState.length>0 ?
+                {props.washing.need===true?
                 <div>
                 <h3 className="damagelist__subtitle">Повреждения кузова:</h3>
+                    <div className="damagelist__result-item">
+                    <p className="damagelist__result-title">Мойка авто</p>
+                    <p className="damagelist__result-price">{props.washing.price}₽</p>
+                    </div></div>:<></>
+                }
+                {props.bucketState.length>0 ?
+                <div>
+                {props.washing.need===false?<h3 className="damagelist__subtitle">Повреждения кузова:</h3>:<></>}
                 {
                     keys.map((text)=>{
                         return <div className="damagelist__result-item">
@@ -48,8 +57,9 @@ function FinalDamages(props) {
                         </div>
                     })
                 }
+
                  <hr/>
-                 </div>:<></>
+                 </div>: props.washing.need===true? <hr/> :<></>
                 }
                 {props.documentsArray.length>0? <div>
                     <h3 className="damagelist__subtitle">Документы отсутствуют:</h3>

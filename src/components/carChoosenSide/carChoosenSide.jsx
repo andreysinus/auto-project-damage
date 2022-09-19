@@ -85,7 +85,9 @@ function CarChoosenSide(props) {
                                             selectedPart={props.selectedPart}
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
-                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
+                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}
+                                            washing={props.washing}
+                                            setWashing={props.setWashing}/></div>:
           props.carPart==="equipment"? <div className=""><MissingParts parts={complect} addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}

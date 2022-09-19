@@ -7,7 +7,7 @@ function CarWashing(props) {
             <p className="carwashing__title">Авто требуется мойка?</p>
             <div className="carwashing__buttons">
                 <button className="carwashing__button decline" onClick={()=>{props.setAddProgressState("1")} }>Нет</button>
-                <button className="carwashing__button accept" onClick={()=>{props.setAddProgressState("1")} }>Да</button>
+                <button className="carwashing__button accept" onClick={()=>{props.setAddProgressState("1"); props.setWashing({need:true, price:"1000"})} }>Да</button>
             </div>
         </div>
     </div>

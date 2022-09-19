@@ -17,7 +17,7 @@ function App() {
     telegram.ready();
   })
   const queryParams = queryString.parse(window.location.search)
-
+  const [washing, setWashing] = useState({need: false, price:0})
   const [documentsArray, setDocumentsArray] = useState([])
   const [equipmentArray, setEquipmentArray] = useState([])
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
@@ -116,7 +116,9 @@ function App() {
                   documentsArray={documentsArray}
                   equipmentArray={equipmentArray}
                   setDocumentsArray={setDocumentsArray}
-                  setEquipmentArray={setEquipmentArray}/>
+                  setEquipmentArray={setEquipmentArray}
+                  washing={washing}
+                  setWashing={setWashing}/>
 
       { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart} choosenCarParts={choosenCarParts[0]} queryParams={queryParams} damagesArray={damagesArray}/> : <div></div>}
     </div>
