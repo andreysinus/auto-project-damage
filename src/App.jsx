@@ -18,6 +18,8 @@ function App() {
   })
   const queryParams = queryString.parse(window.location.search)
 
+  const [documentsArray, setDocumentsArray] = useState()
+  const [equipmentArray, setEquipmentArray] = useState()
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
   const [bucketState, setBucketState] = useState([]) // Массив выбранных повреждений
   const [addProgressState, setAddProgressState] = useState("1") // 1 = выбора части авто; 2 = Выбор конкретной детали авто; 3 = Меню добавление выбранной детали 
@@ -110,7 +112,11 @@ function App() {
                   resultStep={resultStep}
                   setResultStep={setResultStep}
                   getCarDamages={getCarDamages}
-                  damageList={damageList}/>
+                  damageList={damageList}
+                  documentsArray={documentsArray}
+                  equipmentArray={equipmentArray}
+                  setDocumentsArray={setDocumentsArray}
+                  setEquipmentArray={setEquipmentArray}/>
 
       { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart} choosenCarParts={choosenCarParts[0]} queryParams={queryParams} damagesArray={damagesArray}/> : <div></div>}
     </div>

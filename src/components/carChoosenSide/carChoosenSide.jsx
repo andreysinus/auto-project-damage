@@ -8,6 +8,10 @@ import CarBackNew from '../carAllSides/carBackNew'
 import CarLeftNew from '../carAllSides/carLeftNew'
 import CarInterior from '../carAllSides/carInterior'
 import CarWashing from '../carAllSides/carWashing'
+import MissingParts from '../missingParts/missingParts'
+
+import documents from '../../jsons/documents.json'
+import complect from '../../jsons/complect.json'
 
 function CarChoosenSide(props) {
   return (
@@ -81,6 +85,24 @@ function CarChoosenSide(props) {
                                             selectedPart={props.selectedPart}
                                             addProgressState={props.addProgressState}
                                             setAddProgressState={props.setAddProgressState}
+                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
+          props.carPart==="equipment"? <div className=""><MissingParts parts={complect} addBucket={props.addBucket}
+                                            selectMenuState={props.selectMenuState}
+                                            setSelectMenuState={props.setSelectMenuState}
+                                            setSelectedPart={props.setSelectedPart}
+                                            selectedPart={props.selectedPart}
+                                            addProgressState={props.addProgressState}
+                                            setAddProgressState={props.setAddProgressState}
+                                            setArray={props.setEquipmentArray}
+                                            setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
+          props.carPart==="documents"? <div className=""><MissingParts parts={documents} addBucket={props.addBucket}
+                                            selectMenuState={props.selectMenuState}
+                                            setSelectMenuState={props.setSelectMenuState}
+                                            setSelectedPart={props.setSelectedPart}
+                                            selectedPart={props.selectedPart}
+                                            addProgressState={props.addProgressState}
+                                            setAddProgressState={props.setAddProgressState}
+                                            setArray={props.setDocumentsArray}
                                             setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>: <div></div>}
         </div>
     </div>

@@ -22,11 +22,19 @@ function BodyDamage(props) {
                                               setChoosenCarParts={props.setChoosenCarParts}
                                               queryParams={props.queryParams}
                                               getCarDamages={props.getCarDamages}
-                                              damageList={props.damageList}/>
-
+                                              damageList={props.damageList}
+                                              documentsArray={props.documentsArray}
+                                              equipmentArray={props.equipmentArray}
+                                              setDocumentsArray={props.setDocumentsArray}
+                                              setEquipmentArray={props.setEquipmentArray}/>
       {props.selectMenuState==="2"? props.resultStep==="1"?
-          <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep}/> 
-          : props.resultStep==="2"? <FinalDamages bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams}/>: <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams}/>:<div></div>}
+          <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep} documentsArray={props.documentsArray}
+          equipmentArray={props.equipmentArray}
+          setDocumentsArray={props.setDocumentsArray}
+          setEquipmentArray={props.setEquipmentArray}/> 
+          : props.resultStep==="2"? <FinalDamages bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams} documentsArray={props.documentsArray}
+          equipmentArray={props.equipmentArray}
+          />: <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams}/>:<div></div>}
     </div>
   )
 }
