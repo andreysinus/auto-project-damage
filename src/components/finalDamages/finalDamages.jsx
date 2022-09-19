@@ -36,6 +36,9 @@ function FinalDamages(props) {
                 <p className='damagelist__title'>Акт</p>
             </div>
             <div className="damagelist__result">
+                {props.bucketState.length>0 ?
+                <div>
+                <h3 className="damagelist__subtitle">Повреждения кузова:</h3>
                 {
                     keys.map((text)=>{
                         return <div className="damagelist__result-item">
@@ -45,7 +48,27 @@ function FinalDamages(props) {
                         </div>
                     })
                 }
-                <hr />
+                 <hr/>
+                 </div>:<></>
+                }
+                {props.documentsArray.length>0? <div>
+                    <h3 className="damagelist__subtitle">Документы отсутствуют:</h3>
+                    {props.documentsArray.map((text)=>{finalPrice+=Number(text.price); return <div className="damagelist__result-item">
+                        <p className="damagelist__result-title">{text.name}</p>
+                        <p className="damagelist__result-price">{text.price}₽</p>
+                        </div>})
+                    }
+                    <hr />
+                </div>:<></>}
+                {props.equipmentArray.length>0? <div>
+                    <h3 className="damagelist__subtitle">Предметы отсутствуют:</h3>
+                    {props.equipmentArray.map((text)=>{finalPrice+=Number(text.price); return <div className="damagelist__result-item">
+                        <p className="damagelist__result-title">{text.name}</p>
+                        <p className="damagelist__result-price">{text.price}₽</p>
+                        </div>})
+                    }
+                    <hr />
+                </div>:<></>}
                 <p className="damagelist__result-summary">Итого: {finalPrice}₽</p>
             </div>
             <div className="damagelist__footer">

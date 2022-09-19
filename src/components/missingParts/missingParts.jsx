@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './missingParts.scss'
 
-
 function MissingParts(props) {
-    let partsArr = []
+    let partsArr = props.Array
+    const [, updateState] = useState();
+    const forceUpdate = React.useCallback(() => updateState({}), []);
     function handleChangeSelect(id, name, price)
     {
         if (partsArr[id]===undefined){
@@ -23,7 +24,7 @@ function MissingParts(props) {
             {props.parts.map((text, index)=>{
                 return <div key={index} className="missing__item">
                     <div className="missing__item-check">
-                        <input type="checkbox" onChange={()=>handleChangeSelect(index, text.name, text.price)}/>
+                        <input type="checkbox"  checked={partsArr[index]!==undefined?true:false} onChange={()=>{handleChangeSelect(index, text.name, text.price); forceUpdate()}}/>
                     </div>
                     <div className="missing__item-body">
                         <p className="missing__item-body-title">{text.name}</p>
@@ -32,7 +33,7 @@ function MissingParts(props) {
             })}
         </div>
         <div className="missing__footer">
-            <button className="missing__footer-button" onClick={()=>{props.setArray(partsArr); props.setAddProgressState("1")}}>Добавить предметы</button>
+            <button className="missing__footer-button" onClick={()=>{props.setAddProgressState("1"); props.setArray(partsArr)}}>Добавить предметы</button>
         </div>
     </div>
   )

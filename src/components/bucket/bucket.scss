@@ -19,6 +19,9 @@
     border-radius: 15px;
     z-index: 600;
 }
+.bucket__item{
+    margin-top:-10px;
+}
 .bucket__delete{
     z-index:200;
     margin-left: 80%;
@@ -49,6 +52,8 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 85.19%;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 .bucket__price{
     font-weight: 300;
@@ -57,6 +62,8 @@
     text-transform: uppercase;
     text-align: left;
     margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .bucket__valuetitle{
     font-weight: 500;

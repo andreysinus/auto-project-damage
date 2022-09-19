@@ -3,7 +3,7 @@ import './bucket.scss'
 import ImagePreview from '../imagePreview/imagePreview';
 //import deleteIMG from '../../img/delete.svg'
 
-const Bucket = ({bucketState, updateBucket, setResultStep}) => {
+const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equipmentArray}) => {
   function setDegree(degree){
     switch (degree){
       case "1": return "Слабое"
@@ -17,6 +17,11 @@ const Bucket = ({bucketState, updateBucket, setResultStep}) => {
     const [, updateState] = useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
     var arrBucket = bucketState;
+    let buttonVis=false
+    console.log(documentsArray, equipmentArray)
+    if (documentsArray.length>0 || equipmentArray.length>0 || bucketState.length>0){
+      buttonVis=true
+    }
   return (
     <div>
     {visible? <ImagePreview visible={visible} setVisible={setVisible} imageURL={imageURL} forceUpdate={forceUpdate}/>:<div></div>}
@@ -52,7 +57,7 @@ const Bucket = ({bucketState, updateBucket, setResultStep}) => {
             </div>;
               }) : <p className='bucket__none'>Повреждения<br/>не выбраны</p>}
     </div>
-              {bucketState.length>0 ? <div className={bucketState.length>2?'bucket__footer active':'bucket__footer'}>
+              {buttonVis ? <div className={bucketState.length>2?'bucket__footer active':'bucket__footer'}>
                 <button className='bucket__confirm' onClick={()=>setResultStep("2")}>
                   Cформировать акт
                 </button>
