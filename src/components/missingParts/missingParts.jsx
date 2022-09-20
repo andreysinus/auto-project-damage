@@ -21,8 +21,8 @@ function MissingParts(props) {
         <h1 className="missing__title">
             Выберите отсутствующие вещи
         </h1>
-       
-        <div className="missing__body">
+        
+        <div className={props.parts.length>5?"missing__body more":"missing__body"}>
             {props.parts.map((text, index)=>{
                 return <div key={index} className="missing__item">
                     <div className="missing__item-check">
@@ -33,7 +33,7 @@ function MissingParts(props) {
                     </div>
                 </div>
             })}
-             <div className="missing__footer">
+             <div className={props.parts.length>5?"missing__footer more":"missing__footer"}>
             <button className="missing__footer-button" onClick={()=>{props.setAddProgressState("1"); props.setArray(partsArr)}}>Добавить предметы</button>
         </div>
         </div>

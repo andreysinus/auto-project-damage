@@ -6,15 +6,17 @@
         position: -webkit-sticky; /* Safari */  
         position: sticky;
         bottom: 0;
-        background: #f3f3f3;;
         height: 80px;
         padding-left: 20px;
         padding-right: 20px;
         padding-top:20px;
         border-radius: 15px;
         width: 300px;
-        box-shadow: 0px 4px 18px rgba(-5, 0, 0, 0.2);
 
+        &.more{
+            background: #f3f3f3;
+            box-shadow: 0px 4px 18px rgba(-5, 0, 0, 0.2);
+        }
         &-button{
             width: 100%;
             padding-top: 12px;
@@ -25,6 +27,7 @@
             border: 0;
             background: linear-gradient(63.8deg, #324167 -53.91%, #A468B8 104.71%), #D9D9D9;
             color: white;
+            box-shadow: 0px 4px 5px rgba(-5, 0, 0, 0.4);
         }
     }
     &__title{
@@ -42,9 +45,12 @@
     }
     &__body{
         height: 100%;
-        background: #f3f3f3;;
-        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+        background: #f3f3f3;
         z-index: 899;
+        border-radius: 15px;
+        &.more{
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+        }
     }
     &__item{
         display: flex;
