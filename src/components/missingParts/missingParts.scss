@@ -40,7 +40,9 @@
     }
     &__body{
         height: 376px;
+        overflow: auto;
         padding-bottom: 70px;
+        
     }
     &__item{
         display: flex;
