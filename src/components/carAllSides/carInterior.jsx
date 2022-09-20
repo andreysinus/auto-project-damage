@@ -4,7 +4,7 @@ import lSeat from '../../img/carViews/interior/lSeat.svg'
 import rSeat from '../../img/carViews/interior/rSeat.svg'
 import rearSofa from '../../img/carViews/interior/rearSofa.svg'
 import CarImageButton from '../carImageButton/carImageButton'
-
+import salon from '../../img/carViews/interior/interior.svg'
 function CarInterior(props) {
   return (
     <div>
@@ -38,6 +38,7 @@ function CarInterior(props) {
             <CarImageButton src={lSeat} selectedPart="lSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
             <CarImageButton src={rSeat} selectedPart="rSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
             <CarImageButton src={rearSofa} selectedPart="rearSofa" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+            <CarImageButton src={salon} selectedPart="salon" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
 
         </div>
     </div>

@@ -32,6 +32,7 @@ export const TitleCheck = (carPart)=>{
         case "rearSofa": return "Задний диван";
         case "lSeat": return "Переднее сиденье";
         case "rSeat": return "Переднее сиденье";
+        case "salon": return "Салон";
         default: return "none"
     }
   }
