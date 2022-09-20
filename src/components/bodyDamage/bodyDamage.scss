@@ -13,6 +13,9 @@
     will-change: transform;
 }
 
+.bodydamage__visible{
+  opacity: 0;
+}
 @keyframes bodyAnim {
     0%{
       transform: translateY(50%);

@@ -8,8 +8,8 @@ import './bodyDamage.scss'
 function BodyDamage(props) {
   return (
     <div className='bodydamage'>
-      
-        <AddDamages addBucket={props.addBucket}
+      <div className={props.selectMenuState==="2"?"bodydamage__visible":""}>
+        <AddDamages  addBucket={props.addBucket}
                                               selectMenuState={props.selectMenuState}
                                               setSelectMenuState={props.setSelectMenuState}
                                               setSelectedPart={props.setSelectedPart}
@@ -29,6 +29,7 @@ function BodyDamage(props) {
                                               setEquipmentArray={props.setEquipmentArray}
                                               washing={props.washing}
                                               setWashing={props.setWashing}/>
+        </div>
       {props.selectMenuState==="2"? props.resultStep==="1"?
           <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep} documentsArray={props.documentsArray}
           equipmentArray={props.equipmentArray}
