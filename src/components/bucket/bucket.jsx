@@ -66,12 +66,13 @@ const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equip
                 
             </div>;
               }) : <p className='bucket__none'>Повреждения<br/>не выбраны</p>}
-    </div>
               {buttonVis ? <div className={bucketState.length>2?'bucket__footer active':'bucket__footer'}>
                 <button className='bucket__confirm' onClick={()=>setResultStep("2")}>
                   Cформировать акт
                 </button>
               </div> : <div></div>}   
+    </div>
+              
     </div>
   )
 }

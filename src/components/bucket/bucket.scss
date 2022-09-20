@@ -12,12 +12,12 @@
     position: absolute;
     top: 0;
     width: 300px;
-    height: 450px;
-    padding-bottom: 90px;
-    overflow:auto;
+    margin-bottom: 20px;
     background-color: #f3f3f3;
     border-radius: 15px;
     z-index: 600;
+    -webkit-filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
+    filter: drop-shadow( 0px 1px 4px rgba(0, 0, 0, .2));
 }
 .bucket__item{
     margin-top:-10px;
@@ -139,9 +139,9 @@
 }
 .bucket__footer{
     display: flex;
-    top: calc(100% - 81px);
     flex-direction: column;
-    position: absolute;
+    position: sticky;
+    bottom: 0;
     width: calc(100%);
     background-color: #f3f3f3;
     padding: 20px;
