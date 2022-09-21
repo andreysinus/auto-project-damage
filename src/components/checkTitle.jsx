@@ -28,6 +28,7 @@ export const TitleCheck = (carPart)=>{
         case "rrGlass": return "Стекло задней двери";
         case "rearGlass": return "Заднее стекло";
         case "fFoglight": return "Передняя противотуманная фара";
+        case "fFoglightR": return "Передняя противотуманная фара";
         case "rFoglight": return "Задняя противотуманная фара";
         case "rearSofa": return "Задний диван";
         case "lSeat": return "Переднее сиденье";

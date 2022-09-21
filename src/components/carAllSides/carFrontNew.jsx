@@ -8,6 +8,7 @@ import rightMirror from '../../img/carViews/front/rightMirror.svg'
 import frontLeftHeadlight from '../../img/carViews/front/frontLeftHeadlight.svg'
 import frontRightHeadlight from '../../img/carViews/front/frontRightHeadlight.svg'
 import frontBumper from '../../img/carViews/front/frontBumper.svg'
+import smallButton from '../../img/smallButton.svg'
 
 function CarFrontNew(props) {
   return (
@@ -32,6 +33,10 @@ function CarFrontNew(props) {
                 <CarImageButton src={frontLeftHeadlight} selectedPart="lHeadlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
                 </div>
                 <CarImageButton src={frontBumper} selectedPart="fBumper" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+                <div className='carfront__foglights'>
+                  <CarImageButton src={smallButton} selectedPart="fFoglight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+                  <CarImageButton src={smallButton} selectedPart="fFoglightR" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+                </div>
         </div>
     </div>
   )
