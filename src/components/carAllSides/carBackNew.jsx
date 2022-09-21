@@ -5,8 +5,8 @@ import trunk from '../../img/carViews/back/trunk.svg'
 import lRearlight from '../../img/carViews/back/lRearlight.svg'
 import rRearlight from '../../img/carViews/back/rRearlight.svg'
 import rBumper from '../../img/carViews/back/rBumper.svg'
-import rFoglight from '../../img/carViews/back/rFoglight.svg'
 import CarImageButton from '../carImageButton/carImageButton'
+import smallButton from '../../img/smallButton.svg'
 
 function CarBackNew(props) {
   return (
@@ -69,7 +69,10 @@ function CarBackNew(props) {
         <CarImageButton src={rRearlight} selectedPart="rRearlight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
         </div>
         <CarImageButton src={rBumper} selectedPart="rBumper" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
-        <CarImageButton src={rFoglight} selectedPart="rFoglight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+        <div className='carback__foglights'>
+          <CarImageButton src={smallButton} selectedPart="rFoglight" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+          <CarImageButton src={smallButton} selectedPart="rFoglightR" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
+        </div>
     </div>
   )
 }
