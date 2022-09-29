@@ -74,7 +74,7 @@ function App() {
     {
       let config = {
         method: 'get',
-        url: `${queryParams.base}/GetDamage`,
+        url: `${queryParams.base}/GetDamage/?grz=${queryParams.grz}`,
         headers: { 
           'Authorization': 'Basic V0E6V2E1ODUxMzM1'
         }
