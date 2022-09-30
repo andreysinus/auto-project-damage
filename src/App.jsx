@@ -81,7 +81,8 @@ function App() {
       };
       axios(config)
       .then((response) => {
-        setDamageList(response.data)
+        let x = response.data
+        setDamageList(x.Prices)
       })
       .catch((error) => {
         setDamageList(damages)
