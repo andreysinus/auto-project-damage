@@ -41,7 +41,7 @@ function BodyDamage(props) {
           setWashing={props.setWashing}/> 
           : props.resultStep==="2"? <FinalDamages bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams} documentsArray={props.documentsArray}
           equipmentArray={props.equipmentArray} washing={props.washing} setWashing={props.setWashing}
-          />: <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams}/>:<div></div>}
+          />: <SignaturePart bucketState={props.bucketState} setResultStep={props.setResultStep} queryParams={props.queryParams} washing={props.washing} documentsArray={props.documentsArray} equipmentArray={props.equipmentArray}/>:<div></div>}
     </div>
   )
 }

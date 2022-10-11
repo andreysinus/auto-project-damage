@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import './signaturePart.scss'
 import SignaturePad from 'react-signature-canvas';
 import LoadingPage from '../loading/loadingPage.jsx';
+
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
 
@@ -31,30 +32,56 @@ function SignaturePart(props) {
             x++;
             return 0;}
         )
-
+        if (props.washing.need===true){
+            array.push({"Object_id":props.washing.Object_id,
+            "Type": props.washing.Type,
+            "Grade": props.washing.Grade,
+            "Price": props.washing.Price,
+            "Photos": undefined})
+        }
+        if (props.documentsArray!==undefined){
+            props.documentsArray.map((text)=>{
+                array.push({
+                    "Object_id":text.Object_id,"Type": text.Type,
+                    "Grade": text.Grade,
+                    "Price": text.price,
+                    "Photos": undefined})
+                return 0;
+            })
+        }
+        if (props.equipmentArray!==undefined){
+            props.equipmentArray.map((text)=>{
+                array.push({
+                    "Object_id":text.Object_id,"Type": text.Type,
+                    "Grade": text.Grade,
+                    "Price": text.price,
+                    "Photos": undefined})
+                return 0;
+            })
+        }
         let send = {"Sign":getSignature().replace(regex, ""), "Damages":array}
-        setVisibleLoading(true)
-           let config = {
-           method: 'post',
-           url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
-           headers: { 
-               'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
-               'Content-Type': 'application/json'
-           },
-           data : send
-           };
-           axios(config)
-           .then((response) => {
-             res = "Акт был сформирован"
-             telegram.sendData(res)
-           })
-           .catch((error) => {
-             res = error.response.data.Error;
-             if (res===undefined){
-                res="Ошибка выполнения запроса передачи информации"
-             }
-             telegram.sendData(res)
-           });
+            setVisibleLoading(true)
+            let config = {
+            method: 'post',
+            url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
+            headers: { 
+                'Authorization': 'Basic V0E6V2E1ODUxMzM1', 
+                'Content-Type': 'application/json'
+            },
+            data : send
+            };
+            axios(config)
+            .then((response) => {
+              res = "Акт был сформирован"
+              telegram.sendData(res)
+            })
+            .catch((error) => {
+              res = error.response.data.Error;
+              if (res===undefined){
+                 res="Ошибка выполнения запроса передачи информации"
+              }
+              telegram.sendData(res)
+            });
     }
   return (
     <div>

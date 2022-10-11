@@ -93,7 +93,7 @@ function App() {
         }
         res.Prices.map((text)=>{
           if (text.Object==="Мойка"){
-            setWashing({Object:text.Object, Object_id:text.Object_id, Type: text.type, Grade:text.grade, Price:text.Price, need:false});
+            setWashing({Object:text.Object, Object_id:text.Object_id, Type: text.Type, Grade:text.Grade, Price:text.Price, need:false});
           }
           return 0
         })
