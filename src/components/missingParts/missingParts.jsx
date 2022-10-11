@@ -6,11 +6,10 @@ function MissingParts(props) {
     const [, updateState] = useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
     
-    function handleChangeSelect(id, name, price)
+    function handleChangeSelect(id, name, price, Object_id, Type)
     {
         if (partsArr[id]===undefined){
-            partsArr[id]={name: name, price:price}
-
+            partsArr[id]={Object: name, Object_id:Object_id, Type:Type, price:price}
         }
         else{
             partsArr[id]=undefined
@@ -26,10 +25,10 @@ function MissingParts(props) {
             {props.parts.map((text, index)=>{
                 return <div key={index} className="missing__item">
                     <div className="missing__item-check">
-                        <input className="missing__checkbox" type="checkbox"  checked={partsArr[index]!==undefined?true:false} onChange={()=>{console.log(index); handleChangeSelect(index, text.name, text.price); forceUpdate()}}/>
+                        <input className="missing__checkbox" type="checkbox"  checked={partsArr[index]!==undefined?true:false} onChange={()=>{handleChangeSelect(index, text.Object, text.Price, text.Object_id, text.Type); forceUpdate()}}/>
                     </div>
                     <div className="missing__item-body">
-                        <p className="missing__item-body-title">{text.name}</p>
+                        <p className="missing__item-body-title">{text.Object}</p>
                     </div>
                 </div>
             })}

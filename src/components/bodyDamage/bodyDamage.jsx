@@ -28,7 +28,9 @@ function BodyDamage(props) {
                                               setDocumentsArray={props.setDocumentsArray}
                                               setEquipmentArray={props.setEquipmentArray}
                                               washing={props.washing}
-                                              setWashing={props.setWashing}/>
+                                              setWashing={props.setWashing}
+                                              equipment={props.equipment}
+                                              documents={props.documents}/>
         </div>
       {props.selectMenuState==="2"? props.resultStep==="1"?
           <Bucket bucketState={props.bucketState} updateBucket={props.setBucketState} queryParams={props.queryParams} onApply={props.onApply} setResultStep={props.setResultStep} documentsArray={props.documentsArray}

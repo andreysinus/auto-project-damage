@@ -17,22 +17,22 @@ function CarInterior(props) {
             <div className="carInterior__Torpedo">
                 <svg width="109" height="124" viewBox="0 0 109 124" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.7">
-                <path d="M2.7723 49.8787H105.733C105.733 49.8787 110.54 26.5458 107.007 11.7753C107.007 11.7753 65.1906 -12.1528 2.00742 11.7753C2.00742 11.7753 -1.32365 25.9735 2.7723 49.8787V49.8787Z" stroke="#747474" stroke-miterlimit="10"/>
-                <path d="M37.4941 50.203L43.9956 58.2159L44.8217 84.4106L45.4986 105.881H61.3432L62.7353 58.2159L69.1373 50.2603" stroke="#747474" stroke-miterlimit="10"/>
-                <path d="M45.4985 105.5C45.8541 117.298 42.8481 122.701 42.8481 122.701H63.4617C63.4617 122.701 61.1059 119.587 61.3468 105.5" stroke="#747474" stroke-miterlimit="10"/>
-                <path d="M44.7607 83.781C44.7607 83.781 45.5256 81.4916 48.2027 81.4916C50.8798 81.4916 58.957 81.4916 58.957 81.4916C58.957 81.4916 61.9706 81.4916 61.9782 84.1626" stroke="#747474" stroke-miterlimit="10"/>
+                <path d="M2.7723 49.8787H105.733C105.733 49.8787 110.54 26.5458 107.007 11.7753C107.007 11.7753 65.1906 -12.1528 2.00742 11.7753C2.00742 11.7753 -1.32365 25.9735 2.7723 49.8787V49.8787Z" stroke="#747474" strokeMiterlimit="10"/>
+                <path d="M37.4941 50.203L43.9956 58.2159L44.8217 84.4106L45.4986 105.881H61.3432L62.7353 58.2159L69.1373 50.2603" stroke="#747474" strokeMiterlimit="10"/>
+                <path d="M45.4985 105.5C45.8541 117.298 42.8481 122.701 42.8481 122.701H63.4617C63.4617 122.701 61.1059 119.587 61.3468 105.5" stroke="#747474" strokeMiterlimit="10"/>
+                <path d="M44.7607 83.781C44.7607 83.781 45.5256 81.4916 48.2027 81.4916C50.8798 81.4916 58.957 81.4916 58.957 81.4916C58.957 81.4916 61.9706 81.4916 61.9782 84.1626" stroke="#747474" strokeMiterlimit="10"/>
                 </g>
                 </svg>
             </div>
             <div className="carInterior__steeringWheel">
                 <svg width="31" height="23" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21.8455 8.45282C21.8455 8.45282 25.341 12.0968 27.9914 12.3715C30.6417 12.6462 31.2727 19.2397 27.9914 20.4875C24.5226 21.8077 20.3158 22.0862 15.8794 21.9336C12.2845 21.8077 2.13449 22.7807 1.09043 18.4766C0.0463625 14.1725 1.93562 12.1655 4.62418 12.0243C7.31275 11.8831 8.07763 10.7384 9.22496 8.449H21.8455V8.45282Z" fill="white" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M4.75781 14.1C4.75781 14.1 8.45985 13.4132 11.1369 11.8869C13.814 10.3607 18.1509 10.6316 20.2849 11.8869C22.2277 13.0316 24.53 13.6421 26.4384 13.7184" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M11.7453 13.4513L11.1372 15.7026L13.4319 19.5183H17.7075L20.1322 15.1989L18.8587 13.3903L11.7453 13.4513Z" fill="white" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M20.1321 15.1989C20.1321 15.1989 27.8306 16.046 27.1307 17.2098C26.4309 18.3736 22.2699 19.4649 18.0439 18.9192" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10.6438 15.3821C10.6438 15.3821 2.94521 16.2292 3.64508 17.393C4.34112 18.5567 8.50591 19.648 12.7319 19.1024" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9.74139 1.20303L9.2251 8.45282" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M21.8456 8.45282L20.9966 1.20303" stroke="#747474" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.8455 8.45282C21.8455 8.45282 25.341 12.0968 27.9914 12.3715C30.6417 12.6462 31.2727 19.2397 27.9914 20.4875C24.5226 21.8077 20.3158 22.0862 15.8794 21.9336C12.2845 21.8077 2.13449 22.7807 1.09043 18.4766C0.0463625 14.1725 1.93562 12.1655 4.62418 12.0243C7.31275 11.8831 8.07763 10.7384 9.22496 8.449H21.8455V8.45282Z" fill="white" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M4.75781 14.1C4.75781 14.1 8.45985 13.4132 11.1369 11.8869C13.814 10.3607 18.1509 10.6316 20.2849 11.8869C22.2277 13.0316 24.53 13.6421 26.4384 13.7184" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M11.7453 13.4513L11.1372 15.7026L13.4319 19.5183H17.7075L20.1322 15.1989L18.8587 13.3903L11.7453 13.4513Z" fill="white" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M20.1321 15.1989C20.1321 15.1989 27.8306 16.046 27.1307 17.2098C26.4309 18.3736 22.2699 19.4649 18.0439 18.9192" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M10.6438 15.3821C10.6438 15.3821 2.94521 16.2292 3.64508 17.393C4.34112 18.5567 8.50591 19.648 12.7319 19.1024" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9.74139 1.20303L9.2251 8.45282" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M21.8456 8.45282L20.9966 1.20303" stroke="#747474" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
             </div>
             <CarImageButton src={lSeat} selectedPart="lSeat" setAddProgressState={props.setAddProgressState} setSelectedPart={props.setSelectedPart} setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>

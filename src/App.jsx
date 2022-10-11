@@ -17,7 +17,9 @@ function App() {
     telegram.ready();
   })
   const queryParams = queryString.parse(window.location.search)
-  const [washing, setWashing] = useState({need: false, price:0})
+  const [washing, setWashing] = useState({Object:"Мойка",Object_id:899, Type:"",Grade:"Отсутствует", need: false, price:0})
+  const [documents, setDocuments] = useState()
+  const [equipment, setEquipment] = useState()
   const [documentsArray, setDocumentsArray] = useState([])
   const [equipmentArray, setEquipmentArray] = useState([])
   const [selectMenuState, setSelectMenuState] = useState("1") // 1 = Добавить повреждение; 2 = Список выбранных
@@ -81,13 +83,26 @@ function App() {
       };
       axios(config)
       .then((response) => {
-        let x = response.data
-        setDamageList(x.Prices)
+        let res = response.data
+        setDamageList(res.Prices)
+        if (documents===undefined){
+          setDocuments(res.Documents)
+        }
+        if (equipment===undefined){
+          setEquipment(res.Equipment)
+        }
+        res.Prices.map((text)=>{
+          if (text.Object==="Мойка"){
+            setWashing({Object:text.Object, Object_id:text.Object_id, Type: text.type, Grade:text.grade, Price:text.Price, need:false});
+          }
+          return 0
+        })
       })
       .catch((error) => {
         setDamageList(damages)
       });
     }
+ 
   const onApply = () =>{
     telegram.sendData("Повреждения были отправлены"); 
   }
@@ -119,7 +134,9 @@ function App() {
                   setDocumentsArray={setDocumentsArray}
                   setEquipmentArray={setEquipmentArray}
                   washing={washing}
-                  setWashing={setWashing}/>
+                  setWashing={setWashing}
+                  equipment={equipment}
+                  documents={documents}/>
 
       { addProgressState==="3" && selectedPart.name!=="None" && selectMenuState==="1" ? <AllDamages selectedPart={selectedPart} choosenCarParts={choosenCarParts[0]} queryParams={queryParams} damagesArray={damagesArray}/> : <div></div>}
     </div>

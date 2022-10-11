@@ -56,8 +56,6 @@ function SignaturePart(props) {
              telegram.sendData(res)
            });
     }
-    
-    console.log(props.bucketState)
   return (
     <div>
         {visibleLoading? <div className="signaturepart__loading">

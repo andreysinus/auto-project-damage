@@ -64,7 +64,7 @@ function FinalDamages(props) {
                 {props.documentsArray.length>0? <div>
                     <h3 className="damagelist__subtitle">Документы отсутствуют:</h3>
                     {props.documentsArray.map((text)=>{if(text!==undefined){finalPrice+=Number(text.price); return <div className="damagelist__result-item">
-                        <p className="damagelist__result-title">{text.name}</p>
+                        <p className="damagelist__result-title">{text.Object}</p>
                         <p className="damagelist__result-price">{text.price}₽</p>
                         </div>}return <></>})
                     }
@@ -73,7 +73,7 @@ function FinalDamages(props) {
                 {props.equipmentArray.length>0? <div>
                     <h3 className="damagelist__subtitle">Предметы отсутствуют:</h3>
                     {props.equipmentArray.map((text)=>{if(text!==undefined){finalPrice+=Number(text.price); return <div className="damagelist__result-item">
-                        <p className="damagelist__result-title">{text.name}</p>
+                        <p className="damagelist__result-title">{text.Object}</p>
                         <p className="damagelist__result-price">{text.price}₽</p>
                         </div>}return <></>})
                     }

@@ -33,7 +33,7 @@ const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equip
                 </button>
               <div className="bucket__washingbox">
                 <p className="bucket__washing-title">Требуется мойка</p>
-                <p className="bucket__washing-title">={washing.price}₽</p>
+                <p className="bucket__washing-title">={washing.Price}₽</p>
               </div>
           </div>:<></>}
          {bucketState.length>0 ? bucketState.map(function(d, index){

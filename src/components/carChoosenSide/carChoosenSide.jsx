@@ -32,8 +32,7 @@ function CarChoosenSide(props) {
                                             carPart={props.carPart}
                                             setCarPart={props.setCarPart}
                                             setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/>
-                                            
-                                            </div>:
+        </div>:
 
          props.carPart==="back"? <div className=""><CarBackNew addBucket={props.addBucket}
                                           selectMenuState={props.selectMenuState}
@@ -88,7 +87,7 @@ function CarChoosenSide(props) {
                                             setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}
                                             washing={props.washing}
                                             setWashing={props.setWashing}/></div>:
-          props.carPart==="equipment"? <div className=""><MissingParts parts={complect} addBucket={props.addBucket}
+          props.carPart==="equipment"? <div className=""><MissingParts parts={props.equipment===undefined?complect:props.equipment} addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}
@@ -98,7 +97,7 @@ function CarChoosenSide(props) {
                                             setArray={props.setEquipmentArray}
                                             Array={props.equipmentArray}
                                             setChoosenCarParts={props.setChoosenCarParts} getCarDamages={props.getCarDamages} damageList={props.damageList}/></div>:
-          props.carPart==="documents"? <div className=""><MissingParts parts={documents} addBucket={props.addBucket}
+          props.carPart==="documents"? <div className=""><MissingParts parts={props.documents===undefined?documents:props.documents} addBucket={props.addBucket}
                                             selectMenuState={props.selectMenuState}
                                             setSelectMenuState={props.setSelectMenuState}
                                             setSelectedPart={props.setSelectedPart}
