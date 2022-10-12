@@ -37,31 +37,34 @@ function SignaturePart(props) {
             "Type": props.washing.Type,
             "Grade": props.washing.Grade,
             "Price": props.washing.Price,
-            "Photos": undefined})
+            "Photos": []})
         }
+        let docs=[]
+        let equip=[]
         if (props.documentsArray!==undefined){
             props.documentsArray.map((text)=>{
-                array.push({
+                docs.push({
                     "Object_id":text.Object_id,"Type": text.Type,
                     "Grade": text.Grade,
                     "Price": text.price,
-                    "Photos": undefined})
+                    "Photos": []})
                 return 0;
             })
         }
         if (props.equipmentArray!==undefined){
             props.equipmentArray.map((text)=>{
-                array.push({
+                equip.push({
                     "Object_id":text.Object_id,"Type": text.Type,
                     "Grade": text.Grade,
                     "Price": text.price,
-                    "Photos": undefined})
+                    "Photos": []})
                 return 0;
             })
         }
-        let send = {"Sign":getSignature().replace(regex, ""), "Damages":array}
-            setVisibleLoading(true)
-            let config = {
+        let send = {"Sign":getSignature().replace(regex, ""), "Damages":array, "Equipment":equip, "Documents":docs}
+        setVisibleLoading(true)
+        console.log(send)
+        let config = {
             method: 'post',
             url: `${props.queryParams.base}/PostDamages?grz=${props.queryParams.grz}&Telephone=${props.queryParams.telephone}`,
             headers: { 
@@ -76,6 +79,7 @@ function SignaturePart(props) {
               telegram.sendData(res)
             })
             .catch((error) => {
+                console.log(error)
               res = error.response.data.Error;
               if (res===undefined){
                  res="Ошибка выполнения запроса передачи информации"
