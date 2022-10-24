@@ -46,8 +46,7 @@ function SignaturePart(props) {
                 docs.push({
                     "Object_id":text.Object_id,"Type": text.Type,
                     "Grade": text.Grade,
-                    "Price": text.price,
-                    "Photos": []})
+                    "Price": text.price,})
                 return 0;
             })
         }
