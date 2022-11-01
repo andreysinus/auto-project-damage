@@ -15,6 +15,7 @@ function SignaturePart(props) {
     }
 
     const postDamages = () =>{
+        setVisibleLoading(true)
         let res = undefined
         let x=0
         let array=[]
@@ -61,7 +62,6 @@ function SignaturePart(props) {
             })
         }
         let send = {"Sign":getSignature().replace(regex, ""), "Damages":array, "Equipment":equip, "Documents":docs}
-        setVisibleLoading(true)
         console.log(send)
         let config = {
             method: 'post',
