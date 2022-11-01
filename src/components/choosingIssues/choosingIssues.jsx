@@ -48,7 +48,7 @@ function ChoosingIssues (props){
           if (text.photo!==undefined) {photosCount++;}
           return <div key={index}>
               <div className="choosingissue__item">
-                {text.user===false ? <button className='choosingissue__add' onClick={()=>{options.push({name: text.name, object_id:text.Object_id, type: text.type, price: text.price, degree: "1", photo: undefined, user: true}); updateParts();}}><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {text.user===false ? <button className='choosingissue__add' onClick={()=>{options.push({name: text.name, object_id:text.object_id, type: text.type, price: text.price, degree: "1", photo: undefined, user: true}); updateParts();}}><svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.944 8.06408L12.4701 8.06338L12.4698 2.05603C12.4701 0.920515 11.5492 0 10.4137 0C9.27856 0 8.35804 0.920515 8.35804 2.05603V8.06373L2.05603 8.06338C0.920516 8.06373 0 8.98425 0 10.1194C0.000695779 11.2549 0.920516 12.1751 2.05603 12.1751H8.35804V18.944C8.35804 20.0805 9.27856 21 10.4141 21C11.5496 21 12.4697 20.0795 12.4701 18.9447V12.1751H18.9447C20.0795 12.1751 21 11.2549 21 10.1201C21.001 8.9839 20.0795 8.06338 18.944 8.06408Z" fill="white"/>
                   </svg>
                 </button> : <button className='choosingissue__delete' onClick={()=>{options.splice(index, 1); updateParts();}}>
