@@ -60,7 +60,7 @@ function App() {
             if (typeof(response.data) !== 'string'){ 
               setDamagesArray([])
               response.data.map((text)=>{
-                 addDamagesArray(text.photo);
+                 if (text!==null) addDamagesArray(text.photo);
                  return 0;
               })
             }
