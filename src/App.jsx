@@ -6,6 +6,7 @@ import Logo from './components/logo/logo';
 import SelectMenu from './components/selectMenu/selectMenu';
 import queryString from "query-string"
 import damages from './jsons/response.json'
+import ServerError from './components/serverError/serverError';
 
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
@@ -31,6 +32,8 @@ function App() {
   const [resultStep, setResultStep] = useState("1");
   const [damagesArray, setDamagesArray] = useState([])
   const [damageList, setDamageList] = useState()
+  const [serverErrorVisible, setServerErrorVisible] = useState(false)
+
   const addBucket = (name, type, price, degree, photo, object_id)=>{
     setBucketState((prevState)=>[...prevState, {name:name, type:type, price:price, degree: degree, photo:photo, object_id:object_id}]) // Добавление значения в массив выбранных повреждений
   }
@@ -100,6 +103,7 @@ function App() {
       })
       .catch((error) => {
         setDamageList(damages)
+        setServerErrorVisible(true)
       });
     }
  
@@ -108,6 +112,7 @@ function App() {
   }
   return (
     <div className='container'>
+      {serverErrorVisible? <ServerError setServerErrorVisible={setServerErrorVisible}/>: <div> </div>} 
       <div className="logo__anim"><Logo /></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
       <BodyDamage selectMenuState={selectMenuState}
