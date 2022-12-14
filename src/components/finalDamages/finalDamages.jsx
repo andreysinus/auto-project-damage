@@ -1,7 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import "./finalDamages.scss"
 
 function FinalDamages(props) {
+    const { t } = useTranslation();
     var dict = []
     var keys = []
     var finalPrice = 0;
@@ -34,20 +36,20 @@ function FinalDamages(props) {
                     <path d="M14.5485 20.551L11.3185 17.321L23.6599 17.321C24.1175 17.321 24.4876 16.9509 24.4876 16.4933C24.4876 16.0357 24.1175 15.6656 23.6599 15.6656L11.3253 15.6656L14.5553 12.4356C14.7168 12.2741 14.7975 12.0655 14.7975 11.8502C14.7975 11.6348 14.7168 11.4262 14.5553 11.2647C14.2323 10.9417 13.7141 10.9417 13.3911 11.2647L8.7547 15.9011C8.4317 16.2241 8.4317 16.7423 8.7547 17.0653L13.3911 21.7017C13.7141 22.0247 14.2323 22.0247 14.5553 21.7017C14.8715 21.3989 14.8715 20.874 14.5485 20.551Z" fill="#989898"/>
                     </svg></button>
                 </div>
-                <p className='damagelist__title'>Акт</p>
+                <p className='damagelist__title'>{t("act")}</p>
             </div>
             <div className="damagelist__result">
                 {props.washing.need===true?
                 <div>
-                <h3 className="damagelist__subtitle">Повреждения кузова:</h3>
+                <h3 className="damagelist__subtitle">{t("bodyDamage")}:</h3>
                     <div className="damagelist__result-item">
-                    <p className="damagelist__result-title">Мойка авто</p>
+                    <p className="damagelist__result-title">{t("needwash")}</p>
                     <p className="damagelist__result-price">{props.washing.Price}₽</p>
                     </div></div>:<></>
                 }
                 {props.bucketState.length>0 ?
                 <div>
-                {props.washing.need===false?<h3 className="damagelist__subtitle">Повреждения кузова:</h3>:<></>}
+                {props.washing.need===false?<h3 className="damagelist__subtitle">{t("bodyDamage")}:</h3>:<></>}
                 {
                     keys.map((text)=>{
                         return <div className="damagelist__result-item">
@@ -62,7 +64,7 @@ function FinalDamages(props) {
                  </div>: props.washing.need===true? <hr/> :<></>
                 }
                 {props.documentsArray.length>0? <div>
-                    <h3 className="damagelist__subtitle">Документы отсутствуют:</h3>
+                    <h3 className="damagelist__subtitle">{t("docsMissing")}:</h3>
                     {props.documentsArray.map((text)=>{if(text!==undefined){finalPrice+=Number(text.price); return <div className="damagelist__result-item">
                         <p className="damagelist__result-title">{text.Object}</p>
                         <p className="damagelist__result-price">{text.price}₽</p>
@@ -71,7 +73,7 @@ function FinalDamages(props) {
                     <hr />
                 </div>:<></>}
                 {props.equipmentArray.length>0? <div>
-                    <h3 className="damagelist__subtitle">Предметы отсутствуют:</h3>
+                    <h3 className="damagelist__subtitle">{t("thingsMissing")}:</h3>
                     {props.equipmentArray.map((text)=>{if(text!==undefined){finalPrice+=Number(text.price); return <div className="damagelist__result-item">
                         <p className="damagelist__result-title">{text.Object}</p>
                         <p className="damagelist__result-price">{text.price}₽</p>
@@ -79,10 +81,10 @@ function FinalDamages(props) {
                     }
                     <hr />
                 </div>:<></>}
-                <p className="damagelist__result-summary">Итого: {finalPrice}₽</p>
+                <p className="damagelist__result-summary">{t("total")}: {finalPrice}₽</p>
             </div>
             <div className="damagelist__footer">
-                <button className='damagelist__confirm' onClick={()=>props.setResultStep("3")}>Поставить подпись</button>
+                <button className='damagelist__confirm' onClick={()=>props.setResultStep("3")}>{t("putSign")}</button>
             </div>
     </div>
         

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import './missingParts.scss'
 
 function MissingParts(props) {
+    const { t } = useTranslation();
     let partsArr = props.Array
     const [, updateState] = useState();
     const forceUpdate = React.useCallback(() => updateState({}), []);
@@ -18,7 +20,7 @@ function MissingParts(props) {
   return (
     <div className='missing'>
         <h1 className="missing__title">
-            Выберите отсутствующие вещи
+            {t("chooseEmptyThings")}
         </h1>
         
         <div className={props.parts.length>5?"missing__body more":"missing__body"}>
@@ -33,7 +35,7 @@ function MissingParts(props) {
                 </div>
             })}
              <div className={props.parts.length>5?"missing__footer more":"missing__footer"}>
-            <button className="missing__footer-button" onClick={()=>{props.setAddProgressState("1"); props.setArray(partsArr)}}>Добавить предметы</button>
+            <button className="missing__footer-button" onClick={()=>{props.setAddProgressState("1"); props.setArray(partsArr)}}>{t("addThings")}</button>
         </div>
         </div>
         

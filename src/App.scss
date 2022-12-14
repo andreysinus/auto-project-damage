@@ -9,8 +9,14 @@
     justify-content: center ;
     margin: 0 auto;
 }
+.langswitch__anim{
+  animation: langswitchAnim 2s forwards ease;
+  opacity: 0;
+  animation-delay: 1s;
+}
 .logo{
-    margin-top: -70px;
+  margin-top: -50px;
+  margin-bottom: -50px;
     width: 232px;
   }
   .logo__anim{
@@ -43,12 +49,29 @@
   @keyframes logoAnim2 {
     0%{
       transform: translateY(200px);
+
     }
     50%{
       transform: translateY(200px);
+
     }
     100%{
       transform: translateY(0);
+
     }
   }
   
+  @keyframes langswitchAnim {
+    0%{
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    50%{
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

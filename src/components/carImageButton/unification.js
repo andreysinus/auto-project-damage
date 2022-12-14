@@ -15,6 +15,16 @@ export const Unific = (carPart) =>{
         case "Передняя левая дверь": return "Дверь передняя"
         case "Задняя левая дверь": return "Дверь задняя"   
         //
+        case "Front right fender": return "Front fender"
+        case "Rear right fender": return "Rear fender"   
+        case "Front left fender": return "Front fender"
+        case "Rear left fender": return "Rear fender"   
+        //
+        case "Front right door": return "Front door"
+        case "Rear right door": return "Rear door"   
+        case "Front left door": return "Front door"
+        case "Rear left door": return "Rear door"   
+        //
         default: break
     }
     return carPart

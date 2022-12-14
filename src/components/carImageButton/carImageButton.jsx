@@ -2,6 +2,7 @@ import React from 'react'
 import { TitleCheck } from '../checkTitle'
 import { Unific } from './unification'
 import './carImageButton.scss'
+import { TitleCheckEn } from '../checkTitleEn'
 
 function CarImageButton(props) {
     let buttonClass="carImageButton "
@@ -18,10 +19,20 @@ function CarImageButton(props) {
       })
       return mapIndex
     }
+    let lang=true
     function updateOptions(){
       let options = []
+      if (props.damageList!==undefined){
+        if (props.damageList[0].Object.charCodeAt(0)>122)
+        {
+          lang=false
+        }
+        else{
+          lang=true
+        }
+      }
       props.damageList.map((text)=>{
-        if (text.Object===Unific(TitleCheck(props.selectedPart))){
+        if (text.Object===Unific(lang?TitleCheckEn(props.selectedPart):TitleCheck(props.selectedPart))){
           let x = findType(options, text)
           if (x!==false){
             switch (text.Grade){
@@ -47,7 +58,7 @@ function CarImageButton(props) {
       return options
     }
   return (
-        <a href="#detail" type='button' className={buttonClass} onClick={()=> {var arr=updateOptions(TitleCheck(props.selectedPart)); props.setChoosenCarParts(arr); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"}); props.getCarDamages(arr[0].object_id);}}>
+        <a href="#detail" type='button' className={buttonClass} onClick={()=> {var arr=updateOptions(lang?TitleCheckEn(props.selectedPart):TitleCheck(props.selectedPart)); props.setChoosenCarParts(arr); props.setAddProgressState("3");props.setSelectedPart({name:TitleCheck(props.selectedPart), object_id: "998"}); props.getCarDamages(arr[0].object_id);}}>
             <img src={props.src} alt={props.selectedPart}/>
         </a>
   )

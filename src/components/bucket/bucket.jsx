@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import './bucket.scss'
 import ImagePreview from '../imagePreview/imagePreview';
-//import deleteIMG from '../../img/delete.svg'
+import { useTranslation } from 'react-i18next';
 
 const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equipmentArray, washing, setWashing}) => {
+  const { t } = useTranslation();
   function setDegree(degree){
     switch (degree){
-      case "1": return "Слабое"
-      case "2": return "Среднее"
-      case "3": return "Тяжелое"
-      default: return "Нет"
+      case "1": return t("mildDegree")
+      case "2": return t("averageDegree")
+      case "3": return t("severeDegree")
+      default: return t("no")
     }
   }
   const [visible, setVisible] = useState(false);
@@ -32,7 +33,7 @@ const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equip
                     </svg>
                 </button>
               <div className="bucket__washingbox">
-                <p className="bucket__washing-title">Требуется мойка</p>
+                <p className="bucket__washing-title">{t("needwash")}</p>
                 <p className="bucket__washing-title">={washing.Price}₽</p>
               </div>
           </div>:<></>}
@@ -47,11 +48,11 @@ const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equip
                   <p className="bucket__title">{d.name}</p>
                   <div className="bucket__values">
                     <div className="bucket__type">
-                      <div className="bucket__valuetitle">Тип:</div>
+                      <div className="bucket__valuetitle">{t("type")}:</div>
                       <div className="bucket__valuedesc">{d.type}</div>
                     </div>
                     <div className="bucket__degree">
-                      <div className="bucket__valuetitle">Степень:</div>
+                      <div className="bucket__valuetitle">{t("degree")}:</div>
                       <div className="bucket__valuedesc">{setDegree(d.degree)}</div>
                     </div>
                     <button className="bucket__preview" onClick={() =>{setImageURL(d.photo); setVisible(true);}}>
@@ -65,10 +66,10 @@ const Bucket = ({bucketState, updateBucket, setResultStep, documentsArray, equip
                 </div>
                 
             </div>;
-              }) : <p className='bucket__none'>Повреждения<br/>не выбраны</p>}
+              }) : <p className='bucket__none'>{t("damagesNotChoosen")}</p>}
               {buttonVis ? <div className={bucketState.length>2?'bucket__footer active':'bucket__footer'}>
                 <button className='bucket__confirm' onClick={()=>setResultStep("2")}>
-                  Cформировать акт
+                {t("formAct")}
                 </button>
               </div> : <div></div>}   
     </div>

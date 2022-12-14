@@ -3,6 +3,7 @@ import './choosingIssues.scss'
 import {Upload} from 'antd'
 import SelectDegree from '../selectDegree/selectDegree';
 import Resizer from "react-image-file-resizer";
+import { useTranslation } from 'react-i18next';
 
 function getBase64(file, cb) {
   let reader = new FileReader();
@@ -24,6 +25,7 @@ function returnPrice(text){
 }
 
 function ChoosingIssues (props){
+  const { t } = useTranslation();
   let options = props.choosenCarParts;
   const [, updateState] = useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
@@ -43,7 +45,7 @@ function ChoosingIssues (props){
         <h1 className='choosingissue__title'>{props.selectedPart.name}</h1>
       </div>
       <div className='choosingissue__body'>
-        <p className='choosingissue__body-title'>Выберите тип, фотографию<br/>и степень повреждения:</p>
+        <p className='choosingissue__body-title'>{t("chooseTypePhotoEtc")}</p>
         {props.choosenCarParts.map((text, index)=>{
           if (text.photo!==undefined) {photosCount++;}
           return <div key={index}>
@@ -89,9 +91,9 @@ function ChoosingIssues (props){
                   </div>
                 </Upload>
                 </div>
-              <div className="choosingissue__item"><SelectDegree options={options[index]} title="Легкое" degree="1" updateParts={updateParts}/>
-                                                   <SelectDegree options={options[index]} title="Среднее" degree="2" updateParts={updateParts}/>
-                                                   <SelectDegree options={options[index]} title="Тяжелое" degree="3" updateParts={updateParts}/></div>
+              <div className="choosingissue__item"><SelectDegree options={options[index]} title={t("mildDegree")} degree="1" updateParts={updateParts}/>
+                                                   <SelectDegree options={options[index]} title={t("averageDegree")} degree="2" updateParts={updateParts}/>
+                                                   <SelectDegree options={options[index]} title={t("severeDegree")} degree="3" updateParts={updateParts}/></div>
               
             </div>
         })}
@@ -102,7 +104,7 @@ function ChoosingIssues (props){
             props.addBucket(text.name, text.type, returnPrice(text), text.degree, text.photo, text.object_id)
           }
           return 0
-        }); props.setAddProgressState("1")}}}>Добавить повреждения</button>
+        }); props.setAddProgressState("1")}}}>{t("addDamage")}</button>
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import CarChoosenSide from '../carChoosenSide/carChoosenSide';
 import CarViews from '../carViews/carViews'
 import ChoosingIssues from '../choosingIssues/choosingIssues';
@@ -7,7 +8,7 @@ import './addDamages.scss'
 
 
 function AddDamages(props) {
-
+  const { t } = useTranslation();
   return (
     <div className='adddamages'>
       { props.addProgressState==="1" ? <CarViews carPart={props.carPart} setCarPart={props.setCarPart} setAddProgressState={props.setAddProgressState}/> 
@@ -37,7 +38,7 @@ function AddDamages(props) {
                                         setChoosenCarParts={props.setChoosenCarParts} 
                                         addBucket={props.addBucket}
                                         queryParams={props.queryParams}/>
-      : <div>Ошибка</div>}
+      : <div>{t("error")}</div>}
     </div>
   )
 }

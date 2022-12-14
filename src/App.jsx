@@ -7,6 +7,8 @@ import SelectMenu from './components/selectMenu/selectMenu';
 import queryString from "query-string"
 import damages from './jsons/response.json'
 import ServerError from './components/serverError/serverError';
+import LangSwitch from './components/langSwitch/langSwitch';
+import { useTranslation } from 'react-i18next';
 
 const axios = require('axios');
 const telegram=window.Telegram.WebApp
@@ -33,6 +35,7 @@ function App() {
   const [damagesArray, setDamagesArray] = useState([])
   const [damageList, setDamageList] = useState()
   const [serverErrorVisible, setServerErrorVisible] = useState(false)
+  const { t, i18n } = useTranslation();
 
   const addBucket = (name, type, price, degree, photo, object_id)=>{
     setBucketState((prevState)=>[...prevState, {name:name, type:type, price:price, degree: degree, photo:photo, object_id:object_id}]) // Добавление значения в массив выбранных повреждений
@@ -52,8 +55,6 @@ function App() {
         url: `${queryParams.base}/GetCarDamages?grz=${queryParams.grz}&Telephone=${queryParams.telephone}&Object_id=${object_id}`,
         headers: { 
           'Authorization': 'Basic V0E6V2E1ODUxMzM1',
-          'Accept': '*/*',
-          'Content-Type':'application/json',
         },
         data : data
       };
@@ -95,7 +96,7 @@ function App() {
           setEquipment(res.Equipment)
         }
         res.Prices.map((text)=>{
-          if (text.Object==="Мойка"){
+          if (text.Object==="Мойка" || text.Object==="Washing"){
             setWashing({Object:text.Object, Object_id:text.Object_id, Type: text.Type, Grade:text.Grade, Price:text.Price, need:false});
           }
           return 0
@@ -110,10 +111,15 @@ function App() {
   const onApply = () =>{
     telegram.sendData("Повреждения были отправлены"); 
   }
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
   return (
     <div className='container'>
       {serverErrorVisible? <ServerError setServerErrorVisible={setServerErrorVisible}/>: <div> </div>} 
       <div className="logo__anim"><Logo /></div>
+      <div className='langswitch__anim'><LangSwitch t={t} changeLanguage={changeLanguage}/></div>
       <SelectMenu  selectState={selectMenuState} setSelectState={setSelectMenuState} bucketLength={bucketState.length}/>
       <BodyDamage selectMenuState={selectMenuState}
                   setSelectMenuState={setSelectMenuState}
