@@ -113,7 +113,7 @@ function SignaturePart(props) {
             </div>
             <div className="signaturepart__footer">
                 <button className='signaturepart__confirm' onClick={()=>{postDamages();}}>
-                {t("form")}
+                {t("Form")}
                 </button>
             </div>
         </div>
